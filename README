@@ -1,4 +1,4 @@
-Subdomain-Authentication
+Rails3-Mongoid-Devise
 ========================
 
 You can use this project as a starting point for a Rails web application. It requires Rails 3 and uses Mongoid http://mongoid.org/ for data storage and Devise http://github.com/plataformatec/devise for user management and authentication.
