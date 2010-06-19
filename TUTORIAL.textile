@@ -561,7 +561,7 @@ Use the Heroku create command to create and name your new app> Specify the "bamb
 
 @$ heroku create _myapp_ --stack bamboo-ree-1.8.7@
 
-h3. Heroku Add-ons and DNS Configuration
+h3. Heroku Add-on for MongoHQ
 
 You can use a Heroku add-on to deploy your app using the MongoHQ service.
 
