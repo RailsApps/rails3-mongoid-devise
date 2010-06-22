@@ -1,7 +1,0 @@
-Description:
-    Template for creating the rails3-mongoid-devise application.
-
-Example:
-    rails app_name -m http://github.com/fortuity/rails3-mongoid-devise/master/lib/generators/app/app_generator.rb
-
-    This will create a new application.
