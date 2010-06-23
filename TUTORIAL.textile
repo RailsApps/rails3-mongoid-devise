@@ -446,7 +446,7 @@ Modify the file *views/users/show.html.erb* and add:
 
 The file *config/routes.rb* has already been modified to include:
 
-@get "user/show"@
+@get "users/show"@
 
 Remove that and change the routes to:
 
