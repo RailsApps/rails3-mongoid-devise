@@ -8,7 +8,7 @@ This tutorial documents each step that you must follow to create this applicatio
 
 h2. Assumptions
 
-This tutorial is based on Rails version 3 beta 4, Mongoid 2 beta 7, and the GitHub master version of Devise (current as of 17 June 2010).
+This tutorial is based on Rails 3 beta 4, Mongoid 2 beta 7, and Devise 1.1.rc2.
 
 Before beginning this tutorial, you need to install 
 
@@ -104,7 +104,7 @@ The application uses the following gems:
 * rails (version 3.0.0.beta4)
 * mongoid (version 2.0.0.beta7)
 * bson_ext (version 1.0.1)
-* devise (github master as of 17 June 2010)
+* devise (version 1.1.rc2)
 
 If you wish to deploy to Heroku, you can include the heroku gem (version 1.9.10).
 
@@ -118,8 +118,9 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.0.beta4'
 gem 'mongoid', '2.0.0.beta7'
 gem 'bson_ext', '1.0.1'
-gem 'devise', :git => 'http://github.com/plataformatec/devise.git'
-gem 'heroku', '1.9.10'
+gem 'devise', '1.1.rc2'
+# uncomment if you wish to deploy to Heroku
+# gem 'heroku', '1.9.10'
 </pre>
 
 The heroku gem is optional; include it if you intend to deploy to Heroku.
