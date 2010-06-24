@@ -100,6 +100,8 @@ Mongoid provides access to the MongoDB database from Rails.
 
 You can use the default configuration found in the file *config/mongoid.yml*.
 
+If you want to see what's in your MongoDB databases, I recommend using the "MongoHub":http://mongohub.todayclose.com/ app (for Mac OS X).
+
 h2. Set Up Authentication
 
 h3. Set Up Configuration for Devise
