@@ -31,6 +31,14 @@ puts "ban spiders from your site..."
 gsub_file 'public/robots.txt', /# User-Agent/, 'User-Agent'
 gsub_file 'public/robots.txt', /# Disallow/, 'Disallow'
 
+if haml_flag
+  puts "setting up Gemfile for Haml..."
+  append_file 'Gemfile', "\n# Bundle gem needed for Haml\n"
+  gem 'haml', '3.0.13'
+  # gotta do this because Haml scaffold generators are not installed with the Haml gem
+  git :clone => "git://github.com/psynix/rails3_haml_scaffold_generator.git lib/generators/haml"
+end
+
 puts "setting up Gemfile for Mongoid..."
 gsub_file 'Gemfile', /gem \'sqlite3-ruby/, '# gem \'sqlite3-ruby'
 append_file 'Gemfile', "\n# Bundle gems needed for Mongoid\n"
@@ -38,7 +46,7 @@ gem 'mongoid', '2.0.0.beta7'
 gem 'bson_ext', '1.0.1'
 
 puts "installing Mongoid gems (takes a few minutes!)..."
-#run 'bundle install'
+run 'bundle install'
 
 puts "creating 'config/mongoid.yml' Mongoid configuration file..."
 run 'rails generate mongoid:config'
@@ -261,15 +269,23 @@ else
 end
 
 if haml_flag
-  gsub_file 'app/views/layouts/application.html.erb', /<%= yield %>/ do
-    <<-RUBY
-%ul.hmenu
-  = render 'devise/menu/registration_items'
-  = render 'devise/menu/login_items'
-%p{:style => "color: green"}= notice
-%p{:style => "color: red"}= alert
-= yield
-RUBY
+  run 'rm app/views/layouts/application.html.erb'
+  create_file 'app/views/layouts/application.html.haml' do <<-FILE
+!!!
+%html
+  %head
+    %title Testapp
+    = stylesheet_link_tag :all
+    = javascript_include_tag :defaults
+    = csrf_meta_tag
+  %body
+    %ul.hmenu
+      = render 'devise/menu/registration_items'
+      = render 'devise/menu/login_items'
+    %p{:style => "color: green"}= notice
+    %p{:style => "color: red"}= alert
+    = yield
+FILE
   end
 else
   gsub_file 'app/views/layouts/application.html.erb', /<%= yield %>/ do
@@ -285,7 +301,7 @@ RUBY
   end
 end
 
-create_file "public/stylesheets/application.css" do <<-FILE
+create_file 'public/stylesheets/application.css' do <<-FILE
 ul.hmenu {
   list-style: none;	
   margin: 0 0 2em;
