@@ -1,8 +1,16 @@
 # Application Generator Template
 # Modifies a Rails app to use Mongoid and Devise
-# Usage: rails new app_name -m http://github.com/fortuity/rails3-mongoid-devise/master/template.rb
+# Usage: rails new app_name -m http://github.com/fortuity/rails3-mongoid-devise/raw/master/template.rb
+
+# More info: http://github.com/fortuity/rails3-mongoid-devise/
+
+# If you are customizing this template, you can use any methods provided by Thor::Actions
+# http://rdoc.info/rdoc/wycats/thor/blob/f939a3e8a854616784cac1dcff04ef4f3ee5f7ff/Thor/Actions.html
+# and Rails::Generators::Actions
+# http://github.com/rails/rails/blob/master/railties/lib/rails/generators/actions.rb
 
 puts "Modifying a new Rails app to use Mongoid and Devise..."
+puts "Any problems? See http://github.com/fortuity/rails3-mongoid-devise/issues"
 
 if yes?('Would you like to use the Haml template system? (yes/no)')
   haml_flag = true
@@ -313,5 +321,9 @@ ul.hmenu li {
 }
 FILE
 end
+
+puts "checking everything into git..."
+git :add => '.'
+git :commit => "-m 'modified Rails app to use Mongoid and Devise'"
 
 puts "Done setting up your Rails app with Mongoid and Devise."

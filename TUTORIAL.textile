@@ -6,6 +6,16 @@ h1. Tutorial
 
 This tutorial documents each step that you must follow to create this application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you're advised to look for an introduction to Rails elsewhere. Refer to the "Rails Guides":http://guides.rubyonrails.info/ site for help if you are a beginner.
 
+h2. Generating the Application
+
+To create the application, you can follow each step in this tutorial and cut and paste the code into your own files. However, it may be easier to generate a new Rails app using the example as a template:
+
+@$ rails new app_name -m http://github.com/fortuity/rails3-mongoid-devise/raw/master/template.rb@
+
+This creates a new Rails app (with the @app_name@ you provide) on your computer. It includes everything in the example app (as described in the "tutorial":http://wiki.github.com/fortuity/rails3-mongoid-devise/tutorial-walkthrough). Then you can read through the tutorial with the code already on your computer.
+
+If you wish to "change the recipe" to generate the app with your own customized options, you can download the app and edit the file *template.rb*.
+
 h2. Assumptions
 
 This tutorial is based on Rails 3 beta 4, Mongoid 2 beta 7, and Devise 1.1.rc2.

@@ -2,6 +2,8 @@ h1. Rails3-Mongoid-Devise
 
 You can use this project as a starting point for a Rails web application. It requires Rails 3 and uses "Mongoid":http://mongoid.org/ for data storage and "Devise":http://github.com/plataformatec/devise for user management and authentication.
 
+You can clone this app with git (see "Downloading the Example" below). Or you can generate a new Rails app using the app as a template (see "Generating the Application" below).
+
 h1. "Building It" Tutorial
 
 A complete walkthrough tutorial is available on the GitHub wiki:
@@ -17,8 +19,6 @@ h2. What Is Implemented -- and What Is Not
 This is a barebones application that serves to demonstrate Mongoid and Devise working on Rails 3.
 
 All the functionality of Devise is available (see a description of "Devise":http://github.com/plataformatec/devise  for details). However, in this application, all you can do is visit a home page and see a list of users. With the default user's email and password (supplied below), you can log in and view details for each user.
-
-The application uses the default Rails template engine (erb files). You may wish to use an alternative template engine such as Haml.
 
 No testing (RSpec or otherwise) is implemented. Devise and Mongoid have their own test suites and this app only serves to demonstrate Mongoid and Devise working together on Rails 3.
 
@@ -46,13 +46,23 @@ If you intend to deploy to "Heroku":http://heroku.com/, note that Heroku support
 If you don't have MongoDB installed on your computer, you'll need to install it and set it up to be always running on your computer (run at launch). On the Mac OS X, the easiest way to install MongoDB is to install "Homebrew":http://mxcl.github.com/homebrew/ and then use this script to install and set up MongoDB:
 "http://gist.github.com/265272":http://gist.github.com/265272.
 
-h2. Download
+h2. Generating the Application
 
-The source code is managed with Git (a version control system) and hosted at GitHub. You'll need Git on your machine (install it from [http://git.or.cz/](http://git.or.cz/)).
+To get started with a new Rails application based on this example, you can generate a new Rails app:
 
-You can download the app ("clone the repository") with the command
+@$ rails new app_name -m http://github.com/fortuity/rails3-mongoid-devise/raw/master/template.rb@
+
+This creates a new Rails app (with the @app_name@ you provide) on your computer. It includes everything in the example app (as described in the "tutorial":http://wiki.github.com/fortuity/rails3-mongoid-devise/tutorial-walkthrough). Plus it offers you the option of setting up your view files using the Haml templating language.
+
+If you wish to "change the recipe" to generate the app with your own customized options, you can download the app and edit the file *template.rb*.
+
+h3. Downloading the Example
+
+I recommend "Generating the Application" as described above. If that doesn't work, or you simply wish to examine the example code, you can download the app ("clone the repository") with the command
 
 @$ git clone git(at)github.com:fortuity/rails3-mongoid-devise.git@
+
+The source code is managed with Git (a version control system) and hosted at GitHub. You'll need Git on your machine (install it from [http://git.or.cz/](http://git.or.cz/)).
 
 h2. Getting Started
 
