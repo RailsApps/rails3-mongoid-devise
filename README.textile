@@ -56,6 +56,10 @@ This creates a new Rails app (with the @app_name@ you provide) on your computer.
 
 If you wish to "change the recipe" to generate the app with your own customized options, you can copy and edit the file *template.rb*.
 
+If you want to generate a new Rails application that uses Mongoid, Devise, Haml and jQuery you can use this template:
+
+@$ rails new app_name -m http://gist.github.com/raw/452364/gistfile1.txt@
+
 h3. Downloading the Example
 
 I recommend "Generating the Application" as described above. If that doesn't work, or you simply wish to examine the example code, you can download the app ("clone the repository") with the command
