@@ -54,7 +54,7 @@ To get started with a new Rails application based on this example, you can gener
 
 This creates a new Rails app (with the @app_name@ you provide) on your computer. It includes everything in the example app (as described in the "tutorial":http://wiki.github.com/fortuity/rails3-mongoid-devise/tutorial-walkthrough). Plus it offers you the option of setting up your view files using the Haml templating language.
 
-If you wish to "change the recipe" to generate the app with your own customized options, you can download the app and edit the file *template.rb*.
+If you wish to "change the recipe" to generate the app with your own customized options, you can copy and edit the file *template.rb*.
 
 h3. Downloading the Example
 

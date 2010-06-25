@@ -112,7 +112,7 @@ append_file 'Gemfile', "\n# Bundle gem needed for Devise\n"
 gem 'devise', '1.1.rc2'
 
 puts "installing Devise gem (takes a few minutes!)..."
-#run 'bundle install'
+run 'bundle install'
 
 puts "creating 'config/initializers/devise.rb' Devise configuration file..."
 run 'rails generate devise:install'

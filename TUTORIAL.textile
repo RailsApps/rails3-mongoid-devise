@@ -14,7 +14,7 @@ To create the application, you can follow each step in this tutorial and cut and
 
 This creates a new Rails app (with the @app_name@ you provide) on your computer. It includes everything in the example app (as described in the "tutorial":http://wiki.github.com/fortuity/rails3-mongoid-devise/tutorial-walkthrough). Then you can read through the tutorial with the code already on your computer.
 
-If you wish to "change the recipe" to generate the app with your own customized options, you can download the app and edit the file *template.rb*.
+If you wish to "change the recipe" to generate the app with your own customized options, you can copy and edit the file *template.rb*.
 
 h2. Assumptions
 
