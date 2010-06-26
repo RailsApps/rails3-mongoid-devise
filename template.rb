@@ -41,10 +41,9 @@ gsub_file 'public/robots.txt', /# Disallow/, 'Disallow'
 
 if haml_flag
   puts "setting up Gemfile for Haml..."
-  append_file 'Gemfile', "\n# Bundle gem needed for Haml\n"
+  append_file 'Gemfile', "\n# Bundle gems needed for Haml\n"
   gem 'haml', '3.0.13'
-  # gotta do this because Haml scaffold generators are not installed with the Haml gem
-  git :clone => "git://github.com/psynix/rails3_haml_scaffold_generator.git lib/generators/haml"
+  gem "rails3-generators", :group => :development
 end
 
 puts "setting up Gemfile for Mongoid..."
@@ -126,7 +125,7 @@ config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = false
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_charset = "utf-8"
+  config.action_mailer.default :charset => "utf-8"
 RUBY
 end
 gsub_file 'config/environments/production.rb', /config.i18n.fallbacks = true/ do
@@ -139,7 +138,7 @@ config.i18n.fallbacks = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_charset = "utf-8"
+  config.action_mailer.default :charset => "utf-8"
 RUBY
 end
 

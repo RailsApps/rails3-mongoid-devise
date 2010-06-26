@@ -129,11 +129,12 @@ gem 'rails', '3.0.0.beta4'
 gem 'mongoid', '2.0.0.beta7'
 gem 'bson_ext', '1.0.1'
 gem 'devise', '1.1.rc2'
-# uncomment if you wish to deploy to Heroku
+# uncomment the next two lines if you wish to use Haml
+# gem 'haml'
+# gem 'rails3-generators', :group => :development
+# uncomment the next line if you wish to deploy to Heroku
 # gem 'heroku', '1.9.10'
 </pre>
-
-The heroku gem is optional; include it if you intend to deploy to Heroku.
 
 h3. Install the Required Gems
 
@@ -159,6 +160,18 @@ Configure your application to use Mongoid instead of the default ActiveRecord. E
 
 <pre>
 require File.expand_path('../boot', __FILE__)
+
+# If you are deploying to Heroku and MongoHQ,
+# you supply connection information here.
+require 'uri'
+if ENV['MONGOHQ_URL']
+  mongo_uri = URI.parse(ENV['MONGOHQ_URL'])
+  ENV['MONGOID_HOST'] = mongo_uri.host
+  ENV['MONGOID_PORT'] = mongo_uri.port.to_s
+  ENV['MONGOID_USERNAME'] = mongo_uri.user
+  ENV['MONGOID_PASSWORD'] = mongo_uri.password
+  ENV['MONGOID_DATABASE'] = mongo_uri.path.gsub('/', '')
+end
 
 require 'mongoid/railtie'
 require 'action_controller/railtie'
@@ -199,13 +212,20 @@ config.generators do |g|
 end
 </pre>
 
+You'll need two gems in the *Gemfile*, like this:
+
+<pre>
+gem 'haml'
+gem 'rails3-generators', :group => :development
+</pre>
+
 h3. Test the App
 
 You can check that your app runs properly by entering the command
 
 @$ rails server@
 
-To see your application in action, open a browser window and navigate to "http://admin.localhost:3000/":http://localhost:3000. You should see the Rails default information page.
+To see your application in action, open a browser window and navigate to "http://localhost:3000/":http://localhost:3000. You should see the Rails default information page.
 
 Stop the server with Control-C.
 
@@ -249,7 +269,7 @@ config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.perform_deliveries = false
 config.action_mailer.raise_delivery_errors = true
-config.action_mailer.default_charset = "utf-8"
+config.action_mailer.default :charset => "utf-8"
 </pre>
 
 Set up action_mailer in your production environment in the file
@@ -265,7 +285,7 @@ config.action_mailer.default_url_options = { :host => 'yourhost.com' }
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.perform_deliveries = true
 config.action_mailer.raise_delivery_errors = false
-config.action_mailer.default_charset = "utf-8"
+config.action_mailer.default :charset => "utf-8"
 </pre>
 
 h3. Generate a Model and Routes for Users
@@ -384,7 +404,7 @@ You can check that your app runs properly by entering the command
 
 @$ rails server@
 
-To see your application in action, open a browser window and navigate to "http://admin.localhost:3000/":http://localhost:3000. You should see your new home page.
+To see your application in action, open a browser window and navigate to "http://localhost:3000/":http://localhost:3000. You should see your new home page.
 
 Stop the server with Control-C.
 
@@ -544,7 +564,7 @@ You can check that your app runs properly by entering the command
 
 @$ rails server@
 
-To see your application in action, open a browser window and navigate to "http://admin.localhost:3000/":http://localhost:3000. You should see the default user listed on the home page. When you click on the user's name, you should be required to log in before seeing the user's detail page.
+To see your application in action, open a browser window and navigate to "http://localhost:3000/":http://localhost:3000. You should see the default user listed on the home page. When you click on the user's name, you should be required to log in before seeing the user's detail page.
 
 Stop the server with Control-C.
 
