@@ -23,7 +23,7 @@ This tutorial is based on Rails 3, Mongoid 2 beta 11, and Devise 1.1.0.
 Before beginning this tutorial, you need to install 
 
 * The Ruby language (version 1.8.7 or 1.9.2)
-* Rails (version 3 beta 4 or newer)
+* Rails (version 3 release candidate or newer)
 * A working installation of "MongoDB":http://www.mongodb.org/
 
 I recommend installing rvm, the "Ruby Version Manager":http://rvm.beginrescueend.com/, to manage multiple versions of Rails if you have a mix of Rails 3 and Rails 2 applications.
@@ -116,7 +116,7 @@ The application uses the following gems:
 * bson_ext (version 1.0.4)
 * devise (version 1.1.0)
 
-If you wish to deploy to Heroku, you can include the heroku gem (version 1.9.10).
+If you wish to deploy to Heroku, you can include the heroku gem (version 1.9.12).
 
 h3. Set up Your Gemfile
 
