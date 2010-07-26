@@ -42,7 +42,7 @@ gsub_file 'public/robots.txt', /# Disallow/, 'Disallow'
 if haml_flag
   puts "setting up Gemfile for Haml..."
   append_file 'Gemfile', "\n# Bundle gems needed for Haml\n"
-  gem 'haml', '3.0.13'
+  gem 'haml', '3.0.14'
   gem "rails3-generators", :group => :development
 end
 
