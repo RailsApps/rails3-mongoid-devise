@@ -108,7 +108,7 @@ gsub_file 'config/application.rb', /:password/, ':password, :password_confirmati
 
 puts "setting up Gemfile for Devise..."
 append_file 'Gemfile', "\n# Bundle gem needed for Devise\n"
-gem 'devise', '1.1.rc2'
+gem 'devise', '1.1.1'
 
 puts "installing Devise gem (takes a few minutes!)..."
 run 'bundle install'
