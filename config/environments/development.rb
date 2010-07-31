@@ -1,7 +1,5 @@
 Rails3MongoidDevise::Application.configure do
   # Settings specified here will take precedence over those in config/environment.rb
-  
-  config.active_support.deprecation = :log
 
   # In the development environment your application's code is reloaded on
   # every request.  This slows down response time but is perfect for development
@@ -23,4 +21,8 @@ Rails3MongoidDevise::Application.configure do
   config.action_mailer.perform_deliveries = false
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default :charset => "utf-8"
+  
+  
+  # Print deprecation notices to the Rails logger
+  config.active_support.deprecation = :log
 end
