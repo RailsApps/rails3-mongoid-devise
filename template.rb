@@ -49,7 +49,7 @@ end
 puts "setting up Gemfile for Mongoid..."
 gsub_file 'Gemfile', /gem \'sqlite3-ruby/, '# gem \'sqlite3-ruby'
 append_file 'Gemfile', "\n# Bundle gems needed for Mongoid\n"
-gem 'mongoid', '2.0.0.beta11'
+gem 'mongoid', '2.0.0.beta.15'
 gem 'bson_ext', '1.0.4'
 
 puts "installing Mongoid gems (takes a few minutes!)..."

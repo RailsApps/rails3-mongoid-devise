@@ -24,7 +24,7 @@ No testing (RSpec or otherwise) is implemented. Devise and Mongoid have their ow
 
 h2. Dependencies
 
-This app is based on Rails 3, Mongoid 2 beta 11, and Devise 1.1.0.
+This app is based on Rails 3, Mongoid 2 beta 11, and Devise 1.1.1.
 
 Before running this app, you need to install 
 
@@ -90,9 +90,9 @@ h3. About Required Gems
 The application uses the following gems:
 
 * rails (version 3.0.0.rc)
-* mongoid (version 2.0.0.beta11)
+* mongoid (version 2.0.0.beta.15)
 * bson_ext (version 1.0.4)
-* devise (version 1.1.0)
+* devise (version 1.1.1)
 
 If you wish to deploy to Heroku, you can include the heroku gem (version 1.9.10).
 
