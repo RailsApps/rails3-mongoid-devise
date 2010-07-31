@@ -4,6 +4,12 @@ You can use this project as a starting point for a Rails web application. It req
 
 You can clone this app with git (see "Downloading the Example" below). Or you can generate a new Rails app using the app as a template (see "Generating the Application" below).
 
+Is the app useful to you? Follow me on Twitter:
+"http://twitter.com/danielkehoe":http://twitter.com/danielkehoe
+and tweet some praise. I'd love to know you were helped out by what I've put together.
+
+Any issues? Please create an "Issue":http://github.com/fortuity/rails3-mongoid-devise/issues on GitHub.
+
 h1. "Building It" Tutorial
 
 A complete walkthrough tutorial is available on the GitHub wiki:

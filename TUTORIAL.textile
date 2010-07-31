@@ -35,10 +35,12 @@ Check that appropriate versions of Ruby and Rails are installed in your developm
 @$ ruby -v@
 @$ rails -v@
 
-If you intend to deploy to "Heroku":http://heroku.com/, note that Heroku supports Ruby version 1.8.7 but not Ruby version 1.9.2 (as of 18 June 2010).
+If you intend to deploy to "Heroku":http://heroku.com/, note that Heroku supports Ruby version 1.8.7 but not Ruby version 1.9.2 (as of 31 July 2010).
 
-If you don't have MongoDB installed on your computer, you'll need to install it and set it up to be always running on your computer (run at launch). On the Mac OS X, the easiest way to install MongoDB is to install "Homebrew":http://mxcl.github.com/homebrew/ and then use this script to install and set up MongoDB:
-"http://gist.github.com/265272":http://gist.github.com/265272.
+If you don't have MongoDB installed on your computer, you'll need to install it and set it up to be always running on your computer (run at launch). On the Mac OS X, the easiest way to install MongoDB is to install "Homebrew":http://mxcl.github.com/homebrew/ and then set up MongoDB:
+
+@$ brew update@
+@$ brew install mongodb@
 
 h2. Create the Rails Application
 
@@ -327,8 +329,10 @@ We'll modify the user model to allow a "name" to be included when adding or upda
 You'll also want to prevent malicious hackers from creating fake web forms that would allow changing of passwords through the mass-assignment operations of update_attributes(attrs) and new(attrs). With the default Rails ActiveRecord, Devise adds
 
 <pre>
-@attr_accessible :email, :password, :password_confirmation@
+attr_accessible :email, :password, :password_confirmation
 </pre>
+
+You'll need to add this yourself when using Mongoid (now supported in Mongoid 2.0.0.beta.14 and newer).
 
 Modify the file *models/user.rb* and add:
 
@@ -336,6 +340,7 @@ Modify the file *models/user.rb* and add:
 field :name
 validates_presence_of :name
 validates_uniqueness_of :name, :email, :case_sensitive => false
+attr_accessible :name, :email, :password, :password_confirmation
 </pre>
   
 This will allow users to be created (or edited) with a name attribute. When a user is created, a name and must be present and must be unique (not used before). Note that Devise (by default) will check that the email address and password are not blank.
@@ -574,7 +579,7 @@ For your convenience, here are instructions for deploying your app to Heroku. He
 
 To deploy this app to Heroku, you must have a Heroku account. If you need to obtain one, visit "http://heroku.com/":http://heroku.com/ to set up an account. 
 
-Note that Heroku supports Ruby version 1.8.7 but not Ruby version 1.9.2 (as of 18 June 2010). If you've developed the app locally using Ruby version 1.9.2, you may wish to use Ruby Version Manager (rvm) to switch to Ruby version 1.8.7 and test the app before deploying to Heroku.
+Note that Heroku supports Ruby version 1.8.7 but not Ruby version 1.9.2 (as of 31 July 2010). If you've developed the app locally using Ruby version 1.9.2, you may wish to use Ruby Version Manager (rvm) to switch to Ruby version 1.8.7 and test the app before deploying to Heroku.
 
 Make sure the Heroku gem is in your *Gemfile*. If it's not, add it and run
 
@@ -637,3 +642,11 @@ This concludes the tutorial for creating a Ruby on Rails web application that re
 h3. Credits
 
 Daniel Kehoe ("http://danielkehoe.com/":http://danielkehoe.com/) implemented the application and wrote the tutorial.
+
+Was this useful to you? Follow me on Twitter:
+"http://twitter.com/danielkehoe":http://twitter.com/danielkehoe
+and tweet some praise. I'd love to know you were helped out by the tutorial.
+
+Any issues? Please create an "Issue":http://github.com/fortuity/rails3-mongoid-devise/issues on GitHub.
+
+
