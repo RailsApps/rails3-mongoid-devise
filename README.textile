@@ -24,7 +24,7 @@ No testing (RSpec or otherwise) is implemented. Devise and Mongoid have their ow
 
 h2. Dependencies
 
-This app is based on Rails 3, Mongoid 2 beta 11, and Devise 1.1.1.
+This app is based on Rails 3, Mongoid 2 beta 15, and Devise 1.1.1.
 
 Before running this app, you need to install 
 

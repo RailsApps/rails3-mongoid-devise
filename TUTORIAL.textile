@@ -18,7 +18,7 @@ If you wish to "change the recipe" to generate the app with your own customized 
 
 h2. Assumptions
 
-This tutorial is based on Rails 3, Mongoid 2 beta 11, and Devise 1.1.1.
+This tutorial is based on Rails 3, Mongoid 2 beta 15, and Devise 1.1.1.
 
 Before beginning this tutorial, you need to install 
 
