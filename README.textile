@@ -72,7 +72,7 @@ I recommend "Generating the Application" as described above. If that doesn't wor
 
 @$ git clone git(at)github.com:fortuity/rails3-mongoid-devise.git@
 
-The source code is managed with Git (a version control system) and hosted at GitHub. You'll need Git on your machine (install it from [http://git.or.cz/](http://git.or.cz/)).
+The source code is managed with Git (a version control system) and hosted at GitHub. You'll need Git on your machine (install it from "http://git.or.cz/":http://git.or.cz/).
 
 h2. Getting Started
 
@@ -100,7 +100,7 @@ The application uses the following gems:
 * bson_ext (version 1.0.4)
 * devise (version 1.1.1)
 
-If you wish to deploy to Heroku, you can include the heroku gem (version 1.9.10).
+If you wish to deploy to Heroku, you must include the heroku gem.
 
 h3. Install the Required Gems
 
