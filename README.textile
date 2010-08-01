@@ -72,7 +72,7 @@ I recommend "Generating the Application" as described above. If that doesn't wor
 
 @$ git clone git(at)github.com:fortuity/rails3-mongoid-devise.git@
 
-The source code is managed with Git (a version control system) and hosted at GitHub. You'll need Git on your machine (install it from "http://git.or.cz/":http://git.or.cz/).
+The source code is managed with Git (a version control system) and hosted at GitHub. You'll need Git on your machine (install it from "http://git-scm.com/":http://git-scm.com/).
 
 h2. Getting Started
 
