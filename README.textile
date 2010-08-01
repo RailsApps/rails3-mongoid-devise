@@ -270,6 +270,12 @@ h2. Credits
 
 Daniel Kehoe ("http://danielkehoe.com/":http://danielkehoe.com/) implemented the application and wrote the tutorial.
 
+Is the app useful to you? Follow me on Twitter:
+"http://twitter.com/danielkehoe":http://twitter.com/danielkehoe
+and tweet some praise. I'd love to know you were helped out by what I've put together.
+
+Any issues? Please create an "Issue":http://github.com/fortuity/rails3-mongoid-devise/issues on GitHub.
+
 h2. License
 
 h3. Public Domain Dedication
