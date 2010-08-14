@@ -30,13 +30,13 @@ No testing (RSpec or otherwise) is implemented. Devise and Mongoid have their ow
 
 h2. Dependencies
 
-This app is based on Rails 3, Mongoid 2 beta 15, and Devise 1.1.1.
+This app is based on Rails 3, Mongoid 2 beta 16, and Devise 1.1.1.
 
 Before running this app, you need to install 
 
 * The Ruby language (version 1.8.7 or 1.9.2)
 * Rails (version 3 release candidate or newer)
-* A working installation of "MongoDB":http://www.mongodb.org/
+* A working installation of "MongoDB":http://www.mongodb.org/ (version 1.6.0 or newer)
 
 I recommend installing rvm, the "Ruby Version Manager":http://rvm.beginrescueend.com/, to manage multiple versions of Rails if you have a mix of Rails 3 and Rails 2 applications.
 

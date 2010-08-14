@@ -18,13 +18,13 @@ If you wish to "change the recipe" to generate the app with your own customized 
 
 h2. Assumptions
 
-This tutorial is based on Rails 3, Mongoid 2 beta 15, and Devise 1.1.1.
+This tutorial is based on Rails 3, Mongoid 2 beta 16, and Devise 1.1.1.
 
 Before beginning this tutorial, you need to install 
 
 * The Ruby language (version 1.8.7 or 1.9.2)
 * Rails (version 3 release candidate or newer)
-* A working installation of "MongoDB":http://www.mongodb.org/
+* A working installation of "MongoDB":http://www.mongodb.org/ (version 1.6.0 or newer)
 
 I recommend installing rvm, the "Ruby Version Manager":http://rvm.beginrescueend.com/, to manage multiple versions of Rails if you have a mix of Rails 3 and Rails 2 applications.
 
