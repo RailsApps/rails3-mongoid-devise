@@ -30,7 +30,7 @@ gem 'rails', '3.0.0.rc'
 # end
 
 # Bundle gems needed for Mongoid
-gem "mongoid", "2.0.0.beta.15"
+gem "mongoid", "2.0.0.beta.16"
 gem "bson_ext", "1.0.4"
 
 # Bundle gem needed for Devise
