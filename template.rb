@@ -178,12 +178,14 @@ RUBY
 end
 
 if haml_flag
+  run 'rm app/views/home/index.html.haml'
+  run 'touch app/views/home/index.html.haml'
   # we have to use single-quote-style-heredoc to avoid interpolation
-  append_file 'app/views/home/index.html.haml' do <<-'FILE'
+  append_file 'app/views/home/index.html.haml' do 
+<<-'FILE'
 - @users.each do |user|
-  %p
-    User: #{link_to user.name, user}
-  FILE
+  %p User: #{link_to user.name, user}
+FILE
   end
 else
   append_file 'app/views/home/index.html.erb' do <<-FILE
