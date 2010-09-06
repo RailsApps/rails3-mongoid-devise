@@ -18,12 +18,12 @@ If you wish to "change the recipe" to generate the app with your own customized 
 
 h2. Assumptions
 
-This tutorial is based on Rails 3, Mongoid 2 beta 16, and Devise 1.1.1.
+This tutorial is based on Rails 3.0.0, Mongoid 2 beta 17, and Devise 1.1.2.
 
 Before beginning this tutorial, you need to install 
 
 * The Ruby language (version 1.8.7 or 1.9.2)
-* Rails (version 3 release candidate or newer)
+* Rails (version 3.0.0)
 * A working installation of "MongoDB":http://www.mongodb.org/ (version 1.6.0 or newer)
 
 I recommend installing rvm, the "Ruby Version Manager":http://rvm.beginrescueend.com/, to manage multiple versions of Rails if you have a mix of Rails 3 and Rails 2 applications.
@@ -35,7 +35,7 @@ Check that appropriate versions of Ruby and Rails are installed in your developm
 @$ ruby -v@
 @$ rails -v@
 
-If you intend to deploy to "Heroku":http://heroku.com/, note that Heroku supports Ruby version 1.8.7 but not Ruby version 1.9.2 (as of 31 July 2010).
+If you intend to deploy to "Heroku":http://heroku.com/, note that Heroku supports Ruby version 1.8.7 but not Ruby version 1.9.2 (as of 5 September 2010).
 
 If you don't have MongoDB installed on your computer, you'll need to install it and set it up to be always running on your computer (run at launch). On the Mac OS X, the easiest way to install MongoDB is to install "Homebrew":http://mxcl.github.com/homebrew/ and then set up MongoDB:
 
@@ -113,12 +113,12 @@ h3. About Required Gems
 
 The application uses the following gems:
 
-* rails (version 3.0.0.rc)
-* mongoid (version 2.0.0.beta.16)
-* bson_ext (version 1.0.4)
-* devise (version 1.1.1)
+* rails (version 3.0.0)
+* mongoid (version 2.0.0.beta.17)
+* bson_ext (version 1.0.7)
+* devise (version 1.1.2)
 
-If you wish to deploy to Heroku, you can include the heroku gem (version 1.9.12).
+If you wish to deploy to Heroku, you can include the heroku gem (version 1.9.14).
 
 h3. Set up Your Gemfile
 
@@ -127,15 +127,18 @@ Edit the *Gemfile* file to look like this:
 <pre>
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0.rc'
-gem 'mongoid', '2.0.0.beta.16'
-gem 'bson_ext', '1.0.4'
-gem 'devise', '1.1.1'
-# uncomment the next two lines if you wish to use Haml
-# gem 'haml', '3.0.14'
-# gem 'rails3-generators', :group => :development
+gem 'rails', '3.0.0'
+gem 'mongoid', '2.0.0.beta.17'
+gem 'bson_ext', '1.0.7'
+gem 'devise', '1.1.2'
 # uncomment the next line if you wish to deploy to Heroku
-# gem 'heroku', '1.9.12'
+# gem 'heroku', '1.9.14'
+# uncomment the following lines if you wish to use Haml
+# gem 'haml', '3.0.18'
+# gem 'rails3-generators', '0.13.0', :group => :development
+# the folowing gems are used to generate Devise views for Haml
+# gem 'hpricot', '0.8.2', :group => :development
+# gem 'ruby_parser', '2.0.5', :group => :development
 </pre>
 
 h3. Install the Required Gems
@@ -332,7 +335,7 @@ You'll also want to prevent malicious hackers from creating fake web forms that 
 attr_accessible :email, :password, :password_confirmation
 </pre>
 
-You'll need to add this yourself when using Mongoid (now supported in Mongoid 2.0.0.beta.14 and newer).
+You'll need to add this yourself when using Mongoid.
 
 Modify the file *models/user.rb* and add:
 
@@ -579,7 +582,7 @@ For your convenience, here are instructions for deploying your app to Heroku. He
 
 To deploy this app to Heroku, you must have a Heroku account. If you need to obtain one, visit "http://heroku.com/":http://heroku.com/ to set up an account. 
 
-Note that Heroku supports Ruby version 1.8.7 but not Ruby version 1.9.2 (as of 31 July 2010). If you've developed the app locally using Ruby version 1.9.2, you may wish to use Ruby Version Manager (rvm) to switch to Ruby version 1.8.7 and test the app before deploying to Heroku.
+Note that Heroku supports Ruby version 1.8.7 but not Ruby version 1.9.2 (as of 5 September 2010). If you've developed the app locally using Ruby version 1.9.2, you may wish to use Ruby Version Manager (rvm) to switch to Ruby version 1.8.7 and test the app before deploying to Heroku.
 
 Make sure the Heroku gem is in your *Gemfile*. If it's not, add it and run
 

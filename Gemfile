@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0.rc'
+gem 'rails', '3.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -30,8 +30,8 @@ gem 'rails', '3.0.0.rc'
 # end
 
 # Bundle gems needed for Mongoid
-gem "mongoid", "2.0.0.beta.16"
-gem "bson_ext", "1.0.4"
+gem "mongoid", :git => "git://github.com/cherring/mongoid.git"
+gem "bson_ext", "1.0.7"
 
 # Bundle gem needed for Devise
-gem "devise", "1.1.1"
+gem "devise", "1.1.2"

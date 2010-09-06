@@ -42,15 +42,18 @@ gsub_file 'public/robots.txt', /# Disallow/, 'Disallow'
 if haml_flag
   puts "setting up Gemfile for Haml..."
   append_file 'Gemfile', "\n# Bundle gems needed for Haml\n"
-  gem 'haml', '3.0.14'
-  gem "rails3-generators", :group => :development
+  gem 'haml', '3.0.18'
+  gem 'rails3-generators', '0.13.0', :group => :development
+  # the folowing gems are used to generate Devise views for Haml
+  gem 'hpricot', '0.8.2', :group => :development
+  gem 'ruby_parser', '2.0.5', :group => :development
 end
 
 puts "setting up Gemfile for Mongoid..."
 gsub_file 'Gemfile', /gem \'sqlite3-ruby/, '# gem \'sqlite3-ruby'
 append_file 'Gemfile', "\n# Bundle gems needed for Mongoid\n"
-gem 'mongoid', '2.0.0.beta.16'
-gem 'bson_ext', '1.0.4'
+gem 'mongoid', '2.0.0.beta.17'
+gem 'bson_ext', '1.0.7'
 
 puts "installing Mongoid gems (takes a few minutes!)..."
 run 'bundle install'
@@ -108,7 +111,7 @@ gsub_file 'config/application.rb', /:password/, ':password, :password_confirmati
 
 puts "setting up Gemfile for Devise..."
 append_file 'Gemfile', "\n# Bundle gem needed for Devise\n"
-gem 'devise', '1.1.1'
+gem 'devise', '1.1.2'
 
 puts "installing Devise gem (takes a few minutes!)..."
 run 'bundle install'
