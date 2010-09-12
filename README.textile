@@ -14,7 +14,7 @@ h1. "Building It" Tutorial
 
 A complete walkthrough tutorial is available on the GitHub wiki:
 
-"View the Tutorial":http://wiki.github.com/fortuity/rails3-mongoid-devise/tutorial-walkthrough
+"View the Tutorial":http://github.com/fortuity/rails3-mongoid-devise/wiki/Tutorial-%28Walkthrough%29
 
 The tutorial documents each step I followed to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere. Refer to the "Rails Guides":http://guides.rubyonrails.info/ site for help if you are a beginner.
 
@@ -58,7 +58,7 @@ To get started with a new Rails application based on this example, you can gener
 
 @$ rails new app_name -m http://github.com/fortuity/rails3-mongoid-devise/raw/master/template.rb@
 
-This creates a new Rails app (with the @app_name@ you provide) on your computer. It includes everything in the example app (as described in the "tutorial":http://wiki.github.com/fortuity/rails3-mongoid-devise/tutorial-walkthrough). Plus it offers you the option of setting up your view files using the Haml templating language.
+This creates a new Rails app (with the @app_name@ you provide) on your computer. It includes everything in the example app (as described in the "tutorial":http://github.com/fortuity/rails3-mongoid-devise/wiki/Tutorial-%28Walkthrough%29). Plus it offers you the option of setting up your view files using the Haml templating language.
 
 If you wish to "change the recipe" to generate the app with your own customized options, you can copy and edit the file *template.rb*.
 
@@ -243,7 +243,7 @@ The application does not include tests (RSpec or otherwise). It relies on  "Devi
 
 h2. Documentation and Support
 
-See the "Tutorial":http://wiki.github.com/fortuity/rails3-mongoid-devise/tutorial-walkthrough for this app for details of how it was built. Please create an "Issue":http://github.com/fortuity/rails3-mongoid-devise/issues on GitHub if you identify any problems or have suggestions for improvements.
+See the "Tutorial":http://github.com/fortuity/rails3-mongoid-devise/wiki/Tutorial-%28Walkthrough%29 for this app for details of how it was built. Please create an "Issue":http://github.com/fortuity/rails3-mongoid-devise/issues on GitHub if you identify any problems or have suggestions for improvements.
 
 You can find documentation for "Devise":http://github.com/plataformatec/devise at "http://github.com/plataformatec/devise":http://github.com/plataformatec/devise. There is an active "Devise mailing list":http://groups.google.com/group/plataformatec-devise and you can submit "Devise issues":http://github.com/plataformatec/devise/issues at GitHub.
 
