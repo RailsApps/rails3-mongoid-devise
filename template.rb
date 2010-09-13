@@ -380,11 +380,13 @@ if jquery_flag
     = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js'
     = javascript_include_tag 'rails'
 FILE
+    end
   else
     gsub_file 'app/views/layouts/application.html.erb', /<%= javascript_include_tag :defaults %>/ do <<-FILE
         <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js' %>
         <%= javascript_include_tag 'rails' %>
-    FILE    
+FILE
+    end
   end
 end
 
