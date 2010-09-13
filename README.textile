@@ -58,13 +58,15 @@ To get started with a new Rails application based on this example, you can gener
 
 @$ rails new app_name -m http://github.com/fortuity/rails3-mongoid-devise/raw/master/template.rb@
 
-This creates a new Rails app (with the @app_name@ you provide) on your computer. It includes everything in the example app (as described in the "tutorial":http://github.com/fortuity/rails3-mongoid-devise/wiki/Tutorial-%28Walkthrough%29). Plus it offers you the option of setting up your view files using the Haml templating language.
+This creates a new Rails app (with the @app_name@ you provide) on your computer. It includes everything in the example app (as described in the "tutorial":http://github.com/fortuity/rails3-mongoid-devise/wiki/Tutorial-%28Walkthrough%29). 
+
+Plus, the application generator template offers you the following options:
+
+* set up your view files using the Haml templating language
+* use jQuery instead of Prototype
+* install the heroku gem for deployment to Heroku
 
 If you wish to "change the recipe" to generate the app with your own customized options, you can copy and edit the file *template.rb*.
-
-If you want to generate a new Rails application that uses Mongoid, Devise, Haml and jQuery you can use this template:
-
-@$ rails new app_name -m http://gist.github.com/raw/452364/gistfile1.txt@
 
 h3. Downloading the Example
 

@@ -12,12 +12,31 @@
 puts "Modifying a new Rails app to use Mongoid and Devise..."
 puts "Any problems? See http://github.com/fortuity/rails3-mongoid-devise/issues"
 
+#----------------------------------------------------------------------------
+# Configure
+#----------------------------------------------------------------------------
+
 if yes?('Would you like to use the Haml template system? (yes/no)')
   haml_flag = true
 else
   haml_flag = false
 end
 
+if yes?('Would you like to use jQuery instead of Prototype? (yes/no)')
+  jquery_flag = true
+else
+  jquery_flag = false
+end
+
+if yes?('Do you want to install the Heroku gem so you can deploy to Heroku? (yes/no)')
+  heroku_flag = true
+else
+  heroku_flag = false
+end
+
+#----------------------------------------------------------------------------
+# Set up git
+#----------------------------------------------------------------------------
 puts "setting up source control with 'git'..."
 # specific to Mac OS X
 append_file '.gitignore' do
@@ -27,6 +46,9 @@ git :init
 git :add => '.'
 git :commit => "-m 'Initial commit of unmodified new Rails app'"
 
+#----------------------------------------------------------------------------
+# Remove the usual cruft
+#----------------------------------------------------------------------------
 puts "removing unneeded files..."
 run 'rm config/database.yml'
 run 'rm public/index.html'
@@ -39,6 +61,18 @@ puts "ban spiders from your site..."
 gsub_file 'public/robots.txt', /# User-Agent/, 'User-Agent'
 gsub_file 'public/robots.txt', /# Disallow/, 'Disallow'
 
+#----------------------------------------------------------------------------
+# Set up Heroku
+#----------------------------------------------------------------------------
+puts "setting up Gemfile for Heroku..."
+if heroku_flag
+  puts "adding Heroku gem to the Gemfile..."
+  gem 'heroku', '1.10.2', :group => :development
+end
+
+#----------------------------------------------------------------------------
+# Set up Haml
+#----------------------------------------------------------------------------
 if haml_flag
   puts "setting up Gemfile for Haml..."
   append_file 'Gemfile', "\n# Bundle gems needed for Haml\n"
@@ -49,10 +83,14 @@ if haml_flag
   gem 'ruby_parser', '2.0.5', :group => :development
 end
 
+#----------------------------------------------------------------------------
+# Set up Mongoid
+#----------------------------------------------------------------------------
 puts "setting up Gemfile for Mongoid..."
 gsub_file 'Gemfile', /gem \'sqlite3-ruby/, '# gem \'sqlite3-ruby'
 append_file 'Gemfile', "\n# Bundle gems needed for Mongoid\n"
-gem 'mongoid', '2.0.0.beta.17'
+append_file 'Gemfile', "\n# waiting for Mongoid 2 beta 18 -- use this patched version for now:\n"
+gem "mongoid", :git => 'git://github.com/cherring/mongoid.git'
 gem 'bson_ext', '1.0.7'
 
 puts "installing Mongoid gems (takes a few minutes!)..."
@@ -83,6 +121,10 @@ require 'active_resource/railtie'
 require 'rails/test_unit/railtie'
 RUBY
 end
+
+#----------------------------------------------------------------------------
+# Tweak config/application.rb for Mongoid and Haml
+#----------------------------------------------------------------------------
 if haml_flag
 gsub_file 'config/application.rb', /# Configure the default encoding used in templates for Ruby 1.9./ do
 <<-RUBY
@@ -109,6 +151,9 @@ end
 puts "prevent logging of passwords"
 gsub_file 'config/application.rb', /:password/, ':password, :password_confirmation'
 
+#----------------------------------------------------------------------------
+# Set up Devise
+#----------------------------------------------------------------------------
 puts "setting up Gemfile for Devise..."
 append_file 'Gemfile', "\n# Bundle gem needed for Devise\n"
 gem 'devise', '1.1.2'
@@ -154,11 +199,14 @@ gsub_file 'app/models/user.rb', /end/ do
   field :name
   validates_presence_of :name
   validates_uniqueness_of :name, :email, :case_sensitive => false
-  attr_accessible :name, :email, :password, :password_confirmation
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 end
 RUBY
 end
 
+#----------------------------------------------------------------------------
+# Create a default user
+#----------------------------------------------------------------------------
 puts "creating a default user"
 append_file 'db/seeds.rb' do <<-FILE
 puts 'SETTING UP DEFAULT USER LOGIN'
@@ -168,6 +216,9 @@ FILE
 end
 run 'rake db:seed'
 
+#----------------------------------------------------------------------------
+# Create a home page
+#----------------------------------------------------------------------------
 puts "create a home controller and view"
 generate(:controller, "home index")
 gsub_file 'config/routes.rb', /get \"home\/index\"/, 'root :to => "home#index"'
@@ -198,6 +249,9 @@ else
   end
 end
 
+#----------------------------------------------------------------------------
+# Create a users page
+#----------------------------------------------------------------------------
 generate(:controller, "users show")
 gsub_file 'config/routes.rb', /get \"users\/show\"/, '#get \"users\/show\"'
 gsub_file 'config/routes.rb', /devise_for :users/ do
@@ -281,6 +335,9 @@ else
   end
 end
 
+#----------------------------------------------------------------------------
+# Generate Application Layout
+#----------------------------------------------------------------------------
 if haml_flag
   run 'rm app/views/layouts/application.html.erb'
   create_file 'app/views/layouts/application.html.haml' do <<-FILE
@@ -314,6 +371,26 @@ RUBY
   end
 end
 
+#----------------------------------------------------------------------------
+# jQuery Option
+#----------------------------------------------------------------------------
+if jquery_flag
+  if haml_flag
+    gsub_file 'app/views/layouts/application.html.haml', /= javascript_include_tag :defaults/ do <<-FILE
+    = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js'
+    = javascript_include_tag 'rails'
+FILE
+  else
+    gsub_file 'app/views/layouts/application.html.erb', /<%= javascript_include_tag :defaults %>/ do <<-FILE
+        <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js' %>
+        <%= javascript_include_tag 'rails' %>
+    FILE    
+  end
+end
+
+#----------------------------------------------------------------------------
+# Add Stylesheets
+#----------------------------------------------------------------------------
 create_file 'public/stylesheets/application.css' do <<-FILE
 ul.hmenu {
   list-style: none;	
@@ -329,6 +406,6 @@ end
 
 puts "checking everything into git..."
 git :add => '.'
-git :commit => "-m 'modified Rails app to use Mongoid and Devise'"
+git :commit => "-am 'modified Rails app to use Mongoid and Devise'"
 
 puts "Done setting up your Rails app with Mongoid and Devise."
