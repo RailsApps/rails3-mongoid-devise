@@ -376,15 +376,18 @@ end
 #----------------------------------------------------------------------------
 if jquery_flag
   if haml_flag
-    gsub_file 'app/views/layouts/application.html.haml', /= javascript_include_tag :defaults/ do <<-FILE
+    gsub_file 'app/views/layouts/application.html.haml', /= javascript_include_tag :defaults/, ''
+    inject_into_file 'app/views/layouts/application.html.haml', :after => "= stylesheet_link_tag :all\n" do 
+<<-FILE
     = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js'
     = javascript_include_tag 'rails'
 FILE
     end
   else
-    gsub_file 'app/views/layouts/application.html.erb', /<%= javascript_include_tag :defaults %>/ do <<-FILE
-        <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js' %>
-        <%= javascript_include_tag 'rails' %>
+    gsub_file 'app/views/layouts/application.html.erb', /<%= javascript_include_tag :defaults %>/ do 
+<<-FILE
+  <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js' %>
+  <%= javascript_include_tag 'rails' %>
 FILE
     end
   end
