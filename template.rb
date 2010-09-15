@@ -163,6 +163,7 @@ run 'bundle install'
 
 puts "creating 'config/initializers/devise.rb' Devise configuration file..."
 run 'rails generate devise:install'
+run 'rails generate devise:views'
 
 puts "modifying environment configuration files for Devise..."
 gsub_file 'config/environments/development.rb', /# Don't care if the mailer can't send/, '### ActionMailer Config'
@@ -202,6 +203,47 @@ gsub_file 'app/models/user.rb', /end/ do
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 end
 RUBY
+end
+
+#----------------------------------------------------------------------------
+# Modify Devise views
+#----------------------------------------------------------------------------
+
+puts "modifying the default Devise user registration to add 'name'..."
+if haml_flag
+   inject_into_file "app/views/devise/registrations/edit.html.haml", :after => "= devise_error_messages!\n" do
+<<-RUBY
+  %p
+    = f.label :name
+    %br/
+    = f.text_field :name
+RUBY
+   end
+else
+   inject_into_file "app/views/devise/registrations/edit.html.erb", :after => "<%= devise_error_messages! %>\n" do
+<<-RUBY
+  <p><%= f.label :name %><br />
+  <%= f.text_field :name %></p>
+RUBY
+   end
+end
+
+if haml_flag
+   inject_into_file "app/views/devise/registrations/new.html.haml", :after => "= devise_error_messages!\n" do
+<<-RUBY
+  %p
+    = f.label :name
+    %br/
+    = f.text_field :name
+RUBY
+   end
+else
+   inject_into_file "app/views/devise/registrations/new.html.erb", :after => "<%= devise_error_messages! %>\n" do
+<<-RUBY
+  <p><%= f.label :name %><br />
+  <%= f.text_field :name %></p>
+RUBY
+   end
 end
 
 #----------------------------------------------------------------------------

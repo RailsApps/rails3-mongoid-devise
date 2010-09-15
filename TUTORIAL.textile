@@ -564,7 +564,39 @@ Be sure you have included flash messages in *views/layouts/application.html.erb*
 <%= yield %>
 </pre>
 
-h3. Test the App
+h2. Create Customized Views for User Registration
+
+Devise provides a controller and views for registering users. It is called the "registerable" module. The controller and views are hidden in the Devise gem so we don't need to create anything. However, because we want our users to provide a name when registering, we will create custom views for creating and editing a user. Our custom views will override the Devise gem defaults.
+
+First, to copy all the default Devise views to your application, run 
+
+@rails generate devise:views@ 
+
+This will generate a set of views in the directory *app/views/devise/*.
+
+Next, modify the views to create and edit users.
+
+Add the following code to each file:
+
+*app/views/devise/registrations/edit.html.erb*
+
+<pre>
+  <p><%= f.label :name %><br />
+  <%= f.text_field :name %></p>
+</pre>
+
+*app/views/devise/registrations/new.html.erb*
+
+<pre>
+  <p><%= f.label :name %><br />
+  <%= f.text_field :name %></p>
+</pre>
+
+We do not need to add a controller with methods to create a new user or edit or delete a user. We use the existing "registerable" module from Devise which provides a controller with methods to create, edit or delete a user. 
+
+Note that Devise's default behaviour allows any logged-in user to edit or delete his or her own record (but no one else's). When you access the edit page you are editing just your info, and not info of other users.
+
+h2. Test the App
 
 You can check that your app runs properly by entering the command
 
