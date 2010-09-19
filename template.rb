@@ -62,7 +62,7 @@ gsub_file 'public/robots.txt', /# User-Agent/, 'User-Agent'
 gsub_file 'public/robots.txt', /# Disallow/, 'Disallow'
 
 #----------------------------------------------------------------------------
-# Set up Heroku
+# Heroku Option
 #----------------------------------------------------------------------------
 puts "setting up Gemfile for Heroku..."
 if heroku_flag
@@ -71,7 +71,7 @@ if heroku_flag
 end
 
 #----------------------------------------------------------------------------
-# Set up Haml
+# Haml Option
 #----------------------------------------------------------------------------
 if haml_flag
   puts "setting up Gemfile for Haml..."
@@ -81,6 +81,13 @@ if haml_flag
   # the folowing gems are used to generate Devise views for Haml
   gem 'hpricot', '0.8.2', :group => :development
   gem 'ruby_parser', '2.0.5', :group => :development
+end
+
+#----------------------------------------------------------------------------
+# jQuery Option
+#----------------------------------------------------------------------------
+if jquery_flag
+  gem 'jquery-rails', '0.1.2'
 end
 
 #----------------------------------------------------------------------------
@@ -123,7 +130,7 @@ RUBY
 end
 
 #----------------------------------------------------------------------------
-# Tweak config/application.rb for Mongoid and Haml
+# Tweak config/application.rb for Mongoid
 #----------------------------------------------------------------------------
 gsub_file 'config/application.rb', /# Configure the default encoding used in templates for Ruby 1.9./ do
 <<-RUBY
@@ -137,6 +144,16 @@ end
 
 puts "prevent logging of passwords"
 gsub_file 'config/application.rb', /:password/, ':password, :password_confirmation'
+
+#----------------------------------------------------------------------------
+# Set up jQuery
+#----------------------------------------------------------------------------
+if jquery_flag
+  run 'rm public/javascripts/rails.js'
+  puts "replacing Prototype with jQuery"
+  # "--ui" enables optional jQuery UI
+  run 'rails generate jquery:install --ui'
+end
 
 #----------------------------------------------------------------------------
 # Set up Devise
@@ -397,28 +414,6 @@ else
 <p style="color: red"><%= alert %></p>
 <%= yield %>
 RUBY
-  end
-end
-
-#----------------------------------------------------------------------------
-# jQuery Option
-#----------------------------------------------------------------------------
-if jquery_flag
-  if haml_flag
-    gsub_file 'app/views/layouts/application.html.haml', /= javascript_include_tag :defaults/, ''
-    inject_into_file 'app/views/layouts/application.html.haml', :after => "= stylesheet_link_tag :all\n" do 
-<<-FILE
-    = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js'
-    = javascript_include_tag 'rails'
-FILE
-    end
-  else
-    gsub_file 'app/views/layouts/application.html.erb', /<%= javascript_include_tag :defaults %>/ do 
-<<-FILE
-  <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js' %>
-  <%= javascript_include_tag 'rails' %>
-FILE
-    end
   end
 end
 
