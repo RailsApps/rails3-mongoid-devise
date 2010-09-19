@@ -77,7 +77,7 @@ if haml_flag
   puts "setting up Gemfile for Haml..."
   append_file 'Gemfile', "\n# Bundle gems needed for Haml\n"
   gem 'haml', '3.0.18'
-  gem 'rails3-generators', '0.13.0', :group => :development
+  gem 'haml-rails', '0.2', :group => :development
   # the folowing gems are used to generate Devise views for Haml
   gem 'hpricot', '0.8.2', :group => :development
   gem 'ruby_parser', '2.0.5', :group => :development
@@ -125,27 +125,14 @@ end
 #----------------------------------------------------------------------------
 # Tweak config/application.rb for Mongoid and Haml
 #----------------------------------------------------------------------------
-if haml_flag
 gsub_file 'config/application.rb', /# Configure the default encoding used in templates for Ruby 1.9./ do
 <<-RUBY
 config.generators do |g|
       g.orm             :mongoid
-      g.template_engine :haml
     end
-    
+
     # Configure the default encoding used in templates for Ruby 1.9.
 RUBY
-end
-else
-  gsub_file 'config/application.rb', /# Configure the default encoding used in templates for Ruby 1.9./ do
-  <<-RUBY
-  config.generators do |g|
-        g.orm             :mongoid
-      end
-
-      # Configure the default encoding used in templates for Ruby 1.9.
-  RUBY
-  end
 end
 
 puts "prevent logging of passwords"

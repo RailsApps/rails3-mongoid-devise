@@ -135,7 +135,7 @@ gem 'devise', '1.1.2'
 # gem 'heroku', '1.9.14'
 # uncomment the following lines if you wish to use Haml
 # gem 'haml', '3.0.18'
-# gem 'rails3-generators', '0.13.0', :group => :development
+# gem 'haml-rails', '0.2', :group => :development
 # the folowing gems are used to generate Devise views for Haml
 # gem 'hpricot', '0.8.2', :group => :development
 # gem 'ruby_parser', '2.0.5', :group => :development
@@ -208,21 +208,17 @@ Note that @require 'mongoid/railtie'@ must precede the other "require" statement
 
 h3. Configuration for Haml
 
-In this example, we'll use the default Rails template engine. Optionally, you can use another template engine, such as Haml. If you wish to do so, you can set it up like this:
+In this example, we'll use the default Rails template engine. Optionally, you can use another template engine, such as Haml. You'll need extra gems in the *Gemfile*, like this:
 
 <pre>
-config.generators do |g|
-  g.orm             :mongoid
-  g.template_engine :haml
-end
+gem 'haml', '3.0.18'
+gem 'haml-rails', '0.2', :group => :development
+ # the folowing gems are used to generate Devise views for Haml
+gem 'hpricot', '0.8.2', :group => :development
+gem 'ruby_parser', '2.0.5', :group => :development
 </pre>
 
-You'll need two gems in the *Gemfile*, like this:
-
-<pre>
-gem 'haml'
-gem 'rails3-generators', :group => :development
-</pre>
+With the haml-rails gem, there is no need to modify the *application.rb* file to accommodate Haml. Any time you generate a controller or scaffold, you'll get Haml instead of ERB templates. And when your Rails application loads, Haml will be loaded and initialized.
 
 h3. Test the App
 
