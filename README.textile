@@ -102,7 +102,14 @@ The application uses the following gems:
 * bson_ext (version 1.0.7)
 * devise (version 1.1.2)
 
-If you wish to deploy to Heroku, you must include the heroku gem.
+I recommend checking for newer versions of these gems before proceeding:
+
+* "Check rubygems.org for the rails gem":http://rubygems.org/gems/rails
+* "Check rubygems.org for the mongoid gem":http://rubygems.org/gems/mongoid
+* "Check rubygems.org for the bson_ext gem":http://rubygems.org/gems/bson_ext
+* "Check rubygems.org for the devise gem":http://rubygems.org/gems/devise
+
+The app has been tested with the indicated versions. If you are able to build the app with a newer gem, please create an "issue":http://github.com/fortuity/rails3-mongoid-devise/issues on GitHub and I will update the app.
 
 h3. Install the Required Gems
 
