@@ -162,6 +162,20 @@ You can check which gems are installed on your computer with:
 
 Keep in mind that you have installed these gems locally. When you deploy the app to another server, the same gems (and versions) must be available.
 
+h2. Configuration for Haml
+
+In this example, we'll use the default Rails template engine. Optionally, you can use another template engine, such as Haml. You'll need extra gems in the *Gemfile*, like this:
+
+<pre>
+gem 'haml', '3.0.18'
+gem 'haml-rails', '0.2', :group => :development
+ # the folowing gems are used to generate Devise views for Haml
+gem 'hpricot', '0.8.2', :group => :development
+gem 'ruby_parser', '2.0.5', :group => :development
+</pre>
+
+With the haml-rails gem, there is no need to modify the *application.rb* file to accommodate Haml. Any time you generate a controller or scaffold, you'll get Haml instead of ERB templates. And when your Rails application loads, Haml will be loaded and initialized.
+
 h2. Use Mongoid
 
 Mongoid provides access to the MongoDB database from Rails. Set up Mongoid with:
@@ -214,20 +228,6 @@ end
 </pre>
 
 Note that @require 'mongoid/railtie'@ must precede the other "require" statements.
-
-h3. Configuration for Haml
-
-In this example, we'll use the default Rails template engine. Optionally, you can use another template engine, such as Haml. You'll need extra gems in the *Gemfile*, like this:
-
-<pre>
-gem 'haml', '3.0.18'
-gem 'haml-rails', '0.2', :group => :development
- # the folowing gems are used to generate Devise views for Haml
-gem 'hpricot', '0.8.2', :group => :development
-gem 'ruby_parser', '2.0.5', :group => :development
-</pre>
-
-With the haml-rails gem, there is no need to modify the *application.rb* file to accommodate Haml. Any time you generate a controller or scaffold, you'll get Haml instead of ERB templates. And when your Rails application loads, Haml will be loaded and initialized.
 
 h3. Test the App
 
