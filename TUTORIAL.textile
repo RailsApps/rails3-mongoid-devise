@@ -429,6 +429,8 @@ h3. Set Up a Database Seed File
 You'll want to set up a default user so you can easily log in to test the app. Modify the file *db/seeds.rb* by adding:
 
 <pre>
+puts 'EMPTY THE MONGODB DATABASE'
+Mongoid.master.collections.reject { |c| c.name == 'system.indexes'}.each(&:drop)
 puts 'SETTING UP DEFAULT USER LOGIN'
 user = User.create! :name => 'First User', :email => 'user@test.com', :password => 'please', :password_confirmation => 'please'
 puts 'New user created: ' << user.name
