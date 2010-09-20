@@ -37,10 +37,13 @@ Check that appropriate versions of Ruby and Rails are installed in your developm
 
 If you intend to deploy to "Heroku":http://heroku.com/, note that Heroku supports Ruby version 1.8.7 but not Ruby version 1.9.2 (as of 5 September 2010).
 
-If you don't have MongoDB installed on your computer, you'll need to install it and set it up to be always running on your computer (run at launch). On the Mac OS X, the easiest way to install MongoDB is to install "Homebrew":http://mxcl.github.com/homebrew/ and then set up MongoDB:
+If you don't have MongoDB installed on your computer, you'll need to install it and set it up to be always running on your computer (run at launch). On Mac OS X, the easiest way to install MongoDB is to install "Homebrew":http://mxcl.github.com/homebrew/ and then run the following:
 
-@$ brew update@
-@$ brew install mongodb@
+<pre>
+brew install mongo
+sudo mkdir -p /data/db
+sudo chmod -Rv 777 /data/
+</pre>
 
 h2. Create the Rails Application
 
