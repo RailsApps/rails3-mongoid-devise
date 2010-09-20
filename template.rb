@@ -57,14 +57,13 @@ run 'rm public/images/rails.png'
 run 'rm README'
 run 'touch README'
 
-puts "ban spiders from your site..."
+puts "banning spiders from your site by changing robots.txt..."
 gsub_file 'public/robots.txt', /# User-Agent/, 'User-Agent'
 gsub_file 'public/robots.txt', /# Disallow/, 'Disallow'
 
 #----------------------------------------------------------------------------
 # Heroku Option
 #----------------------------------------------------------------------------
-puts "setting up Gemfile for Heroku..."
 if heroku_flag
   puts "adding Heroku gem to the Gemfile..."
   gem 'heroku', '1.10.2', :group => :development
@@ -78,7 +77,7 @@ if haml_flag
   append_file 'Gemfile', "\n# Bundle gems needed for Haml\n"
   gem 'haml', '3.0.18'
   gem 'haml-rails', '0.2', :group => :development
-  # the folowing gems are used to generate Devise views for Haml
+  # the following gems are used to generate Devise views for Haml
   gem 'hpricot', '0.8.2', :group => :development
   gem 'ruby_parser', '2.0.5', :group => :development
 end
@@ -212,7 +211,6 @@ end
 #----------------------------------------------------------------------------
 # Modify Devise views
 #----------------------------------------------------------------------------
-
 puts "modifying the default Devise user registration to add 'name'..."
 if haml_flag
    inject_into_file "app/views/devise/registrations/edit.html.haml", :after => "= devise_error_messages!\n" do
@@ -404,7 +402,7 @@ if haml_flag
 FILE
   end
 else
-  gsub_file 'app/views/layouts/application.html.erb', /<%= yield %>/ do
+  inject_into_file 'app/views/layouts/application.html.erb', :after => "<body>\n" do
   <<-RUBY
 <ul class="hmenu">
   <%= render 'devise/menu/registration_items' %>
@@ -412,7 +410,6 @@ else
 </ul>
 <p style="color: green"><%= notice %></p>
 <p style="color: red"><%= alert %></p>
-<%= yield %>
 RUBY
   end
 end
