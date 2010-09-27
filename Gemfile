@@ -32,7 +32,7 @@ gem 'rails', '3.0.0'
 # Bundle gems needed for Mongoid
 # waiting for Mongoid 2 beta 18 -- use the edge version for now:
 gem "mongoid", :git => "git://github.com/mongoid/mongoid.git"
-gem "bson_ext", "1.0.7"
+gem "bson_ext", "1.0.9"
 
 # Bundle gem needed for Devise
-gem "devise", "1.1.2"
+gem "devise", "1.1.3"

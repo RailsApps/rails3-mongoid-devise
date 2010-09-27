@@ -18,7 +18,7 @@ If you wish to "change the recipe" to generate the app with your own customized 
 
 h2. Assumptions
 
-This tutorial is based on Rails 3.0.0, Mongoid 2 beta 17, and Devise 1.1.2.
+This tutorial is based on Rails 3.0.0, Mongoid 2 beta 17, and Devise 1.1.3.
 
 Before beginning this tutorial, you need to install 
 
@@ -117,11 +117,11 @@ h3. About Required Gems
 The application uses the following gems:
 
 * rails (version 3.0.0)
-* mongoid (version 2.0.0.beta.17)
-* bson_ext (version 1.0.7)
-* devise (version 1.1.2)
+* mongoid (version 2.0.0.beta.18)
+* bson_ext (version 1.0.9)
+* devise (version 1.1.3)
 
-If you wish to deploy to Heroku, you can include the heroku gem (version 1.9.14).
+If you wish to deploy to Heroku, you can include the heroku gem.
 
 I recommend checking for newer versions of these gems before proceeding:
 
@@ -140,11 +140,11 @@ Edit the *Gemfile* file to look like this:
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.0'
-gem 'mongoid', '2.0.0.beta.17'
-gem 'bson_ext', '1.0.7'
-gem 'devise', '1.1.2'
+gem 'mongoid', '2.0.0.beta.18'
+gem 'bson_ext', '1.0.9'
+gem 'devise', '1.1.3'
 # uncomment the next line if you wish to deploy to Heroku
-# gem 'heroku', '1.9.14'
+# gem 'heroku', '1.10.6'
 # uncomment the following lines if you wish to use Haml
 # gem 'haml', '3.0.18'
 # gem 'haml-rails', '0.2', :group => :development
