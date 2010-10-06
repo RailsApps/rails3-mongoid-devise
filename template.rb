@@ -95,9 +95,8 @@ end
 puts "setting up Gemfile for Mongoid..."
 gsub_file 'Gemfile', /gem \'sqlite3-ruby/, '# gem \'sqlite3-ruby'
 append_file 'Gemfile', "\n# Bundle gems needed for Mongoid\n"
-append_file 'Gemfile', "\n# waiting for Mongoid 2 beta 18 -- use the edge version for now:\n"
-gem "mongoid", :git => 'git://github.com/mongoid/mongoid.git'
-gem 'bson_ext', '1.0.9'
+gem "mongoid", "2.0.0.beta.19"
+gem 'bson_ext', '1.1'
 
 puts "installing Mongoid gems (takes a few minutes!)..."
 run 'bundle install'
