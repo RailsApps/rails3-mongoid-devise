@@ -66,7 +66,7 @@ gsub_file 'public/robots.txt', /# Disallow/, 'Disallow'
 #----------------------------------------------------------------------------
 if heroku_flag
   puts "adding Heroku gem to the Gemfile..."
-  gem 'heroku', '1.10.6', :group => :development
+  gem 'heroku', '1.11.0', :group => :development
 end
 
 #----------------------------------------------------------------------------
@@ -75,8 +75,8 @@ end
 if haml_flag
   puts "setting up Gemfile for Haml..."
   append_file 'Gemfile', "\n# Bundle gems needed for Haml\n"
-  gem 'haml', '3.0.18'
-  gem 'haml-rails', '0.2', :group => :development
+  gem 'haml', '3.0.22'
+  gem 'haml-rails', '0.3.4', :group => :development
   # the following gems are used to generate Devise views for Haml
   gem 'hpricot', '0.8.2', :group => :development
   gem 'ruby_parser', '2.0.5', :group => :development
@@ -86,7 +86,7 @@ end
 # jQuery Option
 #----------------------------------------------------------------------------
 if jquery_flag
-  gem 'jquery-rails', '0.1.3'
+  gem 'jquery-rails', '0.2.4'
 end
 
 #----------------------------------------------------------------------------
