@@ -88,3 +88,6 @@ DEPENDENCIES
   devise (= 1.1.3)
   mongoid (= 2.0.0.beta.20)
   rails (= 3.0.3)
+
+METADATA
+  version: 1.0.6
