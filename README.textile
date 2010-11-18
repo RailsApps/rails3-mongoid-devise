@@ -272,6 +272,10 @@ and tweet some praise. I'd love to know you were helped out by what I've put tog
 
 Any issues? Please create an "Issue":http://github.com/fortuity/rails3-mongoid-devise/issues on GitHub.
 
+h4. Contributors
+
+Thank you to contributor "Nakort Valles":https://github.com/Nakort for updating to newer gems.
+
 h2. License
 
 h3. Public Domain Dedication
