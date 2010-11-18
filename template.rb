@@ -66,7 +66,7 @@ gsub_file 'public/robots.txt', /# Disallow/, 'Disallow'
 #----------------------------------------------------------------------------
 if heroku_flag
   puts "adding Heroku gem to the Gemfile..."
-  gem 'heroku', '1.11.0', :group => :development
+  gem 'heroku', '1.13.7', :group => :development
 end
 
 #----------------------------------------------------------------------------
@@ -75,10 +75,10 @@ end
 if haml_flag
   puts "setting up Gemfile for Haml..."
   append_file 'Gemfile', "\n# Bundle gems needed for Haml\n"
-  gem 'haml', '3.0.22'
+  gem 'haml', '3.0.24'
   gem 'haml-rails', '0.3.4', :group => :development
   # the following gems are used to generate Devise views for Haml
-  gem 'hpricot', '0.8.2', :group => :development
+  gem 'hpricot', '0.8.3', :group => :development
   gem 'ruby_parser', '2.0.5', :group => :development
 end
 
@@ -86,7 +86,7 @@ end
 # jQuery Option
 #----------------------------------------------------------------------------
 if jquery_flag
-  gem 'jquery-rails', '0.2.4'
+  gem 'jquery-rails', '0.2.5'
 end
 
 #----------------------------------------------------------------------------
@@ -95,8 +95,8 @@ end
 puts "setting up Gemfile for Mongoid..."
 gsub_file 'Gemfile', /gem \'sqlite3-ruby/, '# gem \'sqlite3-ruby'
 append_file 'Gemfile', "\n# Bundle gems needed for Mongoid\n"
-gem "mongoid", "2.0.0.beta.19"
-gem 'bson_ext', '1.1.1'
+gem "mongoid", "2.0.0.beta.20"
+gem 'bson_ext', '1.1.2'
 
 puts "installing Mongoid gems (takes a few minutes!)..."
 run 'bundle install'

@@ -25,12 +25,12 @@ If you wish to "change the recipe" to generate the app with your own customized 
 
 h2. Assumptions
 
-This tutorial is based on Rails 3.0.0, Mongoid (version 2.0.0.beta.19), and Devise 1.1.3.
+This tutorial is based on Rails 3.0.3, Mongoid (version 2.0.0.beta.20), and Devise 1.1.3.
 
 Before beginning this tutorial, you need to install 
 
 * The Ruby language (version 1.8.7 or 1.9.2)
-* Rails (version 3.0.0)
+* Rails (version 3.0.3)
 * A working installation of "MongoDB":http://www.mongodb.org/ (version 1.6.0 or newer)
 
 I recommend installing rvm, the "Ruby Version Manager":http://rvm.beginrescueend.com/, to manage multiple versions of Rails if you have a mix of Rails 3 and Rails 2 applications.
@@ -121,21 +121,12 @@ h2. Set Up Gems
 
 h3. About Required Gems
 
-The application uses the following gems:
+The application uses the following gems. I recommend checking for newer versions of these gems before proceeding:
 
-* rails (version 3.0.1)
-* mongoid (version 2.0.0.beta.19)
-* bson_ext (version 1.1.1)
-* devise (version 1.1.3)
-
-If you wish to deploy to Heroku, you can include the heroku gem.
-
-I recommend checking for newer versions of these gems before proceeding:
-
-* "Check rubygems.org for the rails gem":http://rubygems.org/gems/rails
-* "Check rubygems.org for the mongoid gem":http://rubygems.org/gems/mongoid
-* "Check rubygems.org for the bson_ext gem":http://rubygems.org/gems/bson_ext
-* "Check rubygems.org for the devise gem":http://rubygems.org/gems/devise
+* rails (version 3.0.3) "(check rubygems.org for the rails gem)":http://rubygems.org/gems/rails
+* mongoid (version 2.0.0.beta.20) "(Check rubygems.org for the mongoid gem)":http://rubygems.org/gems/mongoid
+* bson_ext (version 1.1.2) "(Check rubygems.org for the bson_ext gem)":http://rubygems.org/gems/bson_ext
+* devise (version 1.1.3) "(Check rubygems.org for the devise gem)":http://rubygems.org/gems/devise
 
 The app has been tested with the indicated versions. If you are able to build the app with a newer gem, please create an "issue":http://github.com/fortuity/rails3-mongoid-devise/issues on GitHub and I will update the app.
 
@@ -146,17 +137,17 @@ Edit the *Gemfile* file to look like this:
 <pre>
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0'
-gem 'mongoid', '2.0.0.beta.19'
-gem 'bson_ext', '1.1.1'
+gem 'rails', '3.0.3'
+gem 'mongoid', '2.0.0.beta.20'
+gem 'bson_ext', '1.1.2'
 gem 'devise', '1.1.3'
 # uncomment the next line if you wish to deploy to Heroku
-# gem 'heroku', '1.11.0'
+# gem 'heroku', '1.13.7'
 # uncomment the following lines if you wish to use Haml
-# gem 'haml', '3.0.22'
+# gem 'haml', '3.0.24'
 # gem 'haml-rails', '0.3.4', :group => :development
 # the folowing gems are used to generate Devise views for Haml
-# gem 'hpricot', '0.8.2', :group => :development
+# gem 'hpricot', '0.8.3', :group => :development
 # gem 'ruby_parser', '2.0.5', :group => :development
 </pre>
 

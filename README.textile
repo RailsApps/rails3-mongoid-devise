@@ -29,12 +29,12 @@ All you can do is visit a home page and see a list of users. With the default us
 
 h2. Dependencies
 
-This app is based on Rails 3.0.1, Mongoid (version 2.0.0.beta.19), and Devise 1.1.3.
+This app is based on Rails 3.0.3, Mongoid (version 2.0.0.beta.20), and Devise 1.1.3.
 
 Before running this app, you need to install 
 
 * The Ruby language (version 1.8.7 or 1.9.2)
-* Rails (version 3.0.1)
+* Rails (version 3.0.3)
 * A working installation of "MongoDB":http://www.mongodb.org/ (version 1.6.0 or newer)
 
 I recommend installing rvm, the "Ruby Version Manager":http://rvm.beginrescueend.com/, to manage multiple versions of Rails if you have a mix of Rails 3 and Rails 2 applications.
@@ -82,19 +82,12 @@ h2. Getting Started
 
 h3. About Required Gems
 
-The application uses the following gems:
+The application uses the following gems. I recommend checking for newer versions of these gems before proceeding:
 
-* rails (version 3.0.1)
-* mongoid (version 2.0.0.beta.19)
-* bson_ext (version 1.1.1)
-* devise (version 1.1.3)
-
-I recommend checking for newer versions of these gems before proceeding:
-
-* "Check rubygems.org for the rails gem":http://rubygems.org/gems/rails
-* "Check rubygems.org for the mongoid gem":http://rubygems.org/gems/mongoid
-* "Check rubygems.org for the bson_ext gem":http://rubygems.org/gems/bson_ext
-* "Check rubygems.org for the devise gem":http://rubygems.org/gems/devise
+* rails (version 3.0.3) "(check rubygems.org for the rails gem)":http://rubygems.org/gems/rails
+* mongoid (version 2.0.0.beta.20) "(Check rubygems.org for the mongoid gem)":http://rubygems.org/gems/mongoid
+* bson_ext (version 1.1.2) "(Check rubygems.org for the bson_ext gem)":http://rubygems.org/gems/bson_ext
+* devise (version 1.1.3) "(Check rubygems.org for the devise gem)":http://rubygems.org/gems/devise
 
 The app has been tested with the indicated versions. If you are able to build the app with a newer gem, please create an "issue":http://github.com/fortuity/rails3-mongoid-devise/issues on GitHub and I will update the app.
 
