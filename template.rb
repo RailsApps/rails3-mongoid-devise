@@ -1,6 +1,6 @@
 # Application Generator Template
 # Modifies a Rails app to use Mongoid and Devise
-# Usage: rails new app_name -m http://github.com/fortuity/rails3-mongoid-devise/raw/master/template.rb
+# Usage: rails new app_name -m https://github.com/fortuity/rails3-mongoid-devise/raw/master/template.rb
 
 # More info: http://github.com/fortuity/rails3-mongoid-devise/
 
