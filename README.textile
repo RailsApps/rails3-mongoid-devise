@@ -29,7 +29,7 @@ All you can do is visit a home page and see a list of users. With the default us
 
 h2. Dependencies
 
-This app is based on Rails 3.0.3, Mongoid (version 2.0.0.beta.20), and Devise 1.1.3.
+This app is based on Rails 3.0.3, Mongoid (version 2.0.0.beta.20), and Devise 1.1.5.
 
 Before running this app, you need to install 
 
@@ -88,8 +88,8 @@ The application uses the following gems. I recommend checking for newer versions
 
 * rails (version 3.0.3) "(check rubygems.org for the rails gem)":http://rubygems.org/gems/rails
 * mongoid (version 2.0.0.beta.20) "(Check rubygems.org for the mongoid gem)":http://rubygems.org/gems/mongoid
-* bson_ext (version 1.1.2) "(Check rubygems.org for the bson_ext gem)":http://rubygems.org/gems/bson_ext
-* devise (version 1.1.3) "(Check rubygems.org for the devise gem)":http://rubygems.org/gems/devise
+* bson_ext (version 1.1.5) "(Check rubygems.org for the bson_ext gem)":http://rubygems.org/gems/bson_ext
+* devise (version 1.1.5) "(Check rubygems.org for the devise gem)":http://rubygems.org/gems/devise
 
 The app has been tested with the indicated versions. If you are able to build the app with a newer gem, please create an "issue":http://github.com/fortuity/rails3-mongoid-devise/issues on GitHub and I will update the app.
 
