@@ -60,7 +60,7 @@ To get started with a new Rails application based on this example, you can gener
 
 @$ rails new app_name -m https://github.com/fortuity/rails3-mongoid-devise/raw/master/template.rb@
 
-bq. Generating a Rails application from an "HTTPS" URL does not work in Rails 3.0.3 (and earlier versions). Expect it to be fixed in Rails 3.0.4. For details about the problem, see the "GitHub Support Issue":http://support.github.com/discussions/site/2213-github-https-redirect-breaks-rails-application-generator-templates and the "Rails 3.0.4 Patch":https://rails.lighthouseapp.com/projects/8994-ruby-on-rails/tickets/5926 that will fix it. In the meantime, use @$ git clone git(at)github.com:fortuity/rails3-mongoid-devise.git@ to get a copy of the application.
+bq. Generating a Rails application from an "HTTPS" URL does not work in Rails 3.0.3 (and earlier versions). Expect it to be fixed in Rails 3.0.4. For details about the problem, see the "GitHub Support Issue":http://support.github.com/discussions/site/2213-github-https-redirect-breaks-rails-application-generator-templates and the "Rails 3.0.4 Patch":https://rails.lighthouseapp.com/projects/8994-ruby-on-rails/tickets/5926 that will fix it. In the meantime, use @$ git clone git://github.com/fortuity/rails3-mongoid-devise.git@ to get a copy of the application.
 
 This creates a new Rails app (with the @app_name@ you provide) on your computer. It includes everything in the example app (as described in the "tutorial":http://github.com/fortuity/rails3-mongoid-devise/wiki/Tutorial-%28Walkthrough%29). 
 
@@ -76,7 +76,7 @@ h3. Downloading the Example
 
 I recommend "Generating the Application" as described above. If that doesn't work, or you simply wish to examine the example code, you can download the app ("clone the repository") with the command
 
-@$ git clone git(at)github.com:fortuity/rails3-mongoid-devise.git@
+@$ git clone git://github.com/fortuity/rails3-mongoid-devise.git@
 
 The source code is managed with Git (a version control system) and hosted at GitHub. You'll need Git on your machine (install it from "http://git-scm.com/":http://git-scm.com/).
 
