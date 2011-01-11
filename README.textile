@@ -21,6 +21,16 @@ The tutorial documents each step to follow to create the application. Every step
 
 If you simply wish to modify the application for your own project, you can download the application and set it up as described below, without following the tutorial.
 
+h2. Similar Applications
+
+For a simple Devise example using SQLite for Rails 3, see "plataformatec/devise_example":http://github.com/plataformatec/devise_example.
+
+Andi Altendorfer has extended the app at "http://github.com/iboard/CBA":http://github.com/iboard/CBA with
+
+* "OmniAuth":https://github.com/intridea/omniauth (for authentication via OpenID, Facebook, OAuth, etc.)
+* "CanCan":https://github.com/ryanb/cancan (adding authorization by roles)
+* "Paperclip":https://github.com/thoughtbot/paperclip (for avatars)
+
 h2. What Is Implemented -- and What Is Not
 
 This is a barebones application that serves to demonstrate Mongoid and Devise working on Rails 3.
@@ -259,10 +269,6 @@ If you make improvements to this application, please share with others.
 * Send the author a pull request.
 
 If you add functionality to this application, create an alternative implementation, or build an application that is similar, please contact me and I'll add a note to the README so that others can find your work.
-
-h2. Similar Applications
-
-For a simple Devise example using SQLite for Rails 3, see "plataformatec/devise_example":http://github.com/plataformatec/devise_example.
 
 h2. Credits
 
