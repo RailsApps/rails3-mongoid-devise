@@ -66,7 +66,7 @@ gsub_file 'public/robots.txt', /# Disallow/, 'Disallow'
 #----------------------------------------------------------------------------
 if heroku_flag
   puts "adding Heroku gem to the Gemfile..."
-  gem 'heroku', '1.15.1', :group => :development
+  gem 'heroku', '1.17.5', :group => :development
 end
 
 #----------------------------------------------------------------------------
