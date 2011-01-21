@@ -66,7 +66,7 @@ gsub_file 'public/robots.txt', /# Disallow/, 'Disallow'
 #----------------------------------------------------------------------------
 if heroku_flag
   puts "adding Heroku gem to the Gemfile..."
-  gem 'heroku', '1.17.5', :group => :development
+  gem 'heroku', '1.17.8', :group => :development
 end
 
 #----------------------------------------------------------------------------
@@ -95,8 +95,8 @@ end
 puts "setting up Gemfile for Mongoid..."
 gsub_file 'Gemfile', /gem \'sqlite3-ruby/, '# gem \'sqlite3-ruby'
 append_file 'Gemfile', "\n# Bundle gems needed for Mongoid\n"
-gem "mongoid", "2.0.0.beta.20"
-gem 'bson_ext', '1.1.5'
+gem "mongoid", "2.0.0.rc.6"
+gem 'bson_ext', '1.2.0'
 
 puts "installing Mongoid gems (takes a few minutes!)..."
 run 'bundle install'
@@ -158,7 +158,7 @@ end
 #----------------------------------------------------------------------------
 puts "setting up Gemfile for Devise..."
 append_file 'Gemfile', "\n# Bundle gem needed for Devise\n"
-gem 'devise', '1.1.5'
+gem 'devise', '1.2.rc'
 
 puts "installing Devise gem (takes a few minutes!)..."
 run 'bundle install'
