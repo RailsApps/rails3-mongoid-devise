@@ -1,8 +1,10 @@
 h1. Rails3-Mongoid-Devise
 
-This example app combines "Mongoid":http://mongoid.org/ with "Devise":http://github.com/plataformatec/devise to give you quick development without schemas or migrations plus ready-made authentication and user management. It gives you a skeleton or starter app you can deploy in minutes. Best of all, it's got a detailed tutorial (walk-through) to show how it's built.
+This example app combines "Mongoid":http://mongoid.org/ with "Devise":http://github.com/plataformatec/devise. Mongoid is a datastore that gives you quick development without schemas or migrations. Devise gives you ready-made authentication and user management.
 
-You can clone this app or generate a new Rails application using this app as a template. Haml and jQuery are options plus you can instantly deploy to Heroku (complete instructions below).
+Best of all, there's a detailed tutorial (walk-through) to show how it's built.
+
+You can clone this app or generate a new Rails application using this app as a template.
 
 h2. Help and More Information
 
@@ -37,19 +39,17 @@ h2. What Is Implemented -- and What Is Not
 
 This is a barebones application that serves to demonstrate Mongoid and Devise working on Rails 3.
 
-All you can do is visit a home page and see a list of users. With the default user's email and password (supplied below), you can log in and view details for each user. However, all the functionality of Devise is available (see a description of "Devise":http://github.com/plataformatec/devisefor details). You can customize this app as you need.
+All you can do is visit a home page and see a list of users. With the default user's email and password (supplied below), you can log in and view details for each user. You can customize this app as you need.
 
 h2. Dependencies
-
-This app is based on Rails 3.0.3, Mongoid (version 2.0.0.rc.6), and Devise 1.2.rc.
 
 Before running this app, you need to install 
 
 * The Ruby language (version 1.8.7 or 1.9.2)
-* Rails (version 3.0.3)
+* Rails (version 3.0.4)
 * A working installation of "MongoDB":http://www.mongodb.org/ (version 1.6.0 or newer)
 
-I recommend installing rvm, the "Ruby Version Manager":http://rvm.beginrescueend.com/, to manage multiple versions of Rails if you have a mix of Rails 3 and Rails 2 applications.
+I recommend installing rvm, the "Ruby Version Manager":http://rvm.beginrescueend.com/, to manage multiple versions of Rails.
 
 If you are using rvm, you can see a list of the Ruby versions currently installed:
 @$ rvm list@
@@ -70,19 +70,19 @@ h2. Generating the Application
 
 To get started with a new Rails application based on this example, you can generate a new Rails app:
 
-@$ rails new app_name -m https://github.com/fortuity/rails3-mongoid-devise/raw/master/template.rb@
+@$ rails new app_name -m https://github.com/fortuity/rails3-application-templates/raw/master/rails3-mongoid-devise-template.rb@
 
-bq. Generating a Rails application from an "HTTPS" URL does not work in Rails 3.0.3 (and earlier versions). Expect it to be fixed in Rails 3.0.4. For details about the problem, see the "GitHub Support Issue":http://support.github.com/discussions/site/2213-github-https-redirect-breaks-rails-application-generator-templates and the "Rails 3.0.4 Patch":https://rails.lighthouseapp.com/projects/8994-ruby-on-rails/tickets/5926 that will fix it. In the meantime, use @$ git clone git://github.com/fortuity/rails3-mongoid-devise.git@ to get a copy of the application.
+bq. You MUST be using Rails 3.0.4. Generating a Rails application from an “HTTPS” URL does not work in Rails 3.0.3 and earlier versions.
 
-This creates a new Rails app (with the @app_name@ you provide) on your computer. It includes everything in the example app (as described in the "tutorial":http://github.com/fortuity/rails3-mongoid-devise/wiki/Tutorial-%28Walkthrough%29). 
+This creates a new Rails app (with the @app_name@ you provide) on your computer.
 
-Plus, the application generator template offers you the following options:
+The application template offers you the following options:
 
 * set up your view files using the Haml templating language
 * use jQuery instead of Prototype
 * install the heroku gem for deployment to Heroku
 
-If you wish to "change the recipe" to generate the app with your own customized options, you can copy and edit the file *template.rb*.
+If you wish to "change the recipe" to generate the app with your own customized options, you can copy and edit the file *rails3-mongoid-devise-template.rb* found at the project "fortuity/rails3-application-templates":https://github.com/fortuity/rails3-application-templates.
 
 h3. Downloading the Example
 
@@ -90,7 +90,7 @@ I recommend "Generating the Application" as described above. If that doesn't wor
 
 @$ git clone git://github.com/fortuity/rails3-mongoid-devise.git@
 
-The source code is managed with Git (a version control system) and hosted at GitHub. You'll need Git on your machine (install it from "http://git-scm.com/":http://git-scm.com/).
+The source code is managed with Git (a version control system). You'll need Git on your machine (install it from "http://git-scm.com/":http://git-scm.com/).
 
 h2. Getting Started
 
