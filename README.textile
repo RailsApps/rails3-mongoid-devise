@@ -98,9 +98,9 @@ h3. About Required Gems
 
 The application uses the following gems. I recommend checking for newer versions of these gems before proceeding:
 
-* rails (version 3.0.3) "(check rubygems.org for the rails gem)":http://rubygems.org/gems/rails
-* mongoid (version 2.0.0.rc.6) "(Check rubygems.org for the mongoid gem)":http://rubygems.org/gems/mongoid
-* bson_ext (version 1.2.0) "(Check rubygems.org for the bson_ext gem)":http://rubygems.org/gems/bson_ext
+* rails (version 3.0.4) "(check rubygems.org for the rails gem)":http://rubygems.org/gems/rails
+* mongoid (version 2.0.0.rc.7) "(Check rubygems.org for the mongoid gem)":http://rubygems.org/gems/mongoid
+* bson_ext (version 1.2.2) "(Check rubygems.org for the bson_ext gem)":http://rubygems.org/gems/bson_ext
 * devise (version 1.2.rc) "(Check rubygems.org for the devise gem)":http://rubygems.org/gems/devise
 
 The app has been tested with the indicated versions. If you are able to build the app with a newer gem, please create an "issue":http://github.com/fortuity/rails3-mongoid-devise/issues on GitHub and I will update the app.
