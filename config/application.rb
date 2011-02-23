@@ -25,6 +25,9 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module Rails3MongoidDevise
   class Application < Rails::Application
+  
+config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
