@@ -1,5 +1,5 @@
 Rails3MongoidDevise::Application.configure do
-  # Settings specified here will take precedence over those in config/environment.rb
+  # Settings specified here will take precedence over those in config/application.rb
 
   # The production environment is meant for finished, "live" apps.
   # Code is not reloaded between requests
@@ -44,8 +44,11 @@ Rails3MongoidDevise::Application.configure do
   # the I18n.default_locale when a translation can not be found)
   config.i18n.fallbacks = true
 
+  # Send deprecation notices to registered listeners
+  config.active_support.deprecation = :notify
+
   config.action_mailer.default_url_options = { :host => 'yourhost.com' }
-  ### ActionMailer Config
+  # ActionMailer Config
   # Setup for production - deliveries, no errors raised
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
