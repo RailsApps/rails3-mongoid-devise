@@ -7,15 +7,15 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+  <ul class="hmenu">
+    <%= render 'devise/menu/registration_items' %>
+    <%= render 'devise/menu/login_items' %>
+  </ul>
+  <%- flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+  <%- end -%>
 
-<ul class="hmenu">
-  <%= render 'devise/menu/registration_items' %>
-  <%= render 'devise/menu/login_items' %>
-</ul>
-<p style="color: green"><%= notice %></p>
-<p style="color: red"><%= alert %></p>
 <%= yield %>
-
 
 </body>
 </html>
