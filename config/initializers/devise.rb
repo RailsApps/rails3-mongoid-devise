@@ -25,8 +25,8 @@ Devise.setup do |config|
   # Tell if authentication through request.params is enabled. True by default.
   # config.params_authenticatable = true
 
-  # Tell if authentication through HTTP Basic Auth is enabled. True by default.
-  # config.http_authenticatable = true
+  # Tell if authentication through HTTP Basic Auth is enabled. False by default.
+  # config.http_authenticatable = false
 
   # Set this to true to use Basic Auth for AJAX requests.  True by default.
   # config.http_authenticatable_on_xhr = true
@@ -46,7 +46,7 @@ Devise.setup do |config|
   config.encryptor = :bcrypt
 
   # Setup a pepper to generate the encrypted password.
-  config.pepper = "5206ffa6a6c1718b88a6570faa50eade0e969d643c5f0b1163226f06e54cc4e6df858511a4b688cb0ad4b5c681a6c5d09ef498f7c81e5bfaf67afcf7e5f746ad"
+  config.pepper = "9b329865861daebab8bb9f509bd7e4f6a45c98b71ee119b6def4c863e72ff009580a50760f4c8cee9dd0c9808c445cea08922e3ff7a102dd4965758a9cba7b01"
 
   # ==> Configuration for :confirmable
   # The time you want to give your user to confirm his account. During this time
@@ -72,7 +72,7 @@ Devise.setup do |config|
   # config.password_length = 6..20
 
   # Regex to use to validate the email address
-  # config.email_regexp = /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i
+  # config.email_regexp = /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
 
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
