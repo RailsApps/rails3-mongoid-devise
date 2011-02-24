@@ -84,7 +84,9 @@ You can use an application template to generate a new version of the example app
 
 Use the command:
 
-@$ rails new APP_NAME -m https://github.com/fortuity/rails3-application-templates/raw/master/rails3-mongoid-devise-template.rb@
+@$ rails new APP_NAME -m https://github.com/fortuity/rails3-application-templates/raw/master/rails3-mongoid-devise-template.rb -T -O -J@
+
+Use the @-T -O -J@ flags to skip Test::Unit files, Active Record files, and Prototype files.
 
 bq. You MUST be using Rails 3.0.4. Generating a Rails application from an “HTTPS” URL does not work in Rails 3.0.3 and earlier versions.
 
