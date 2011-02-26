@@ -1,10 +1,9 @@
 source 'http://rubygems.org'
-
 gem 'rails', '3.0.4'
-
-# Bundle gems needed for Mongoid
-gem "mongoid", "2.0.0.rc.7"
-gem "bson_ext", "1.2.2"
-
-# Bundle gem needed for Devise
-gem "devise", "1.2.rc"
+gem "mongoid", ">= 2.0.0.rc.7"
+gem "bson_ext"
+gem "rspec-rails", ">= 2.5", :group => [:development, :test]
+gem "database_cleaner", :group => :test
+gem "cucumber-rails", :group => :test
+gem "capybara", :group => :test
+gem "devise", ">= 1.2.rc"
