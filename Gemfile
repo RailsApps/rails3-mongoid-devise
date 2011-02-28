@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
-gem 'rails', '3.0.4'
+gem 'rails', '>= 3.0.5'
 gem "mongoid", ">= 2.0.0.rc.7"
 gem "bson_ext", ">= 1.2.4"
 gem "rspec-rails", ">= 2.5", :group => [:development, :test]
