@@ -95,8 +95,11 @@ This creates a new Rails app (with the @APP_NAME@ you provide) on your computer.
 The application template offers you the following options:
 
 * set up your view files using the Haml templating language
-* use jQuery instead of Prototype
+* use jQuery instead of Prototype as a Javascript framework
+* use RSpec instead of TestUnit for unit testing
+* use Cucumber for Behavior Driven Development
 * install the heroku gem for deployment to Heroku
+* use Yard instead of RDoc for documemntation
 
 h4. Use "Recipes" to Customize an Application Template
 
@@ -259,7 +262,15 @@ This application provides no useful functionality apart from demonstrating Devis
 
 h2. Testing
 
-The application does not include tests (RSpec or otherwise). It relies on  "Devise":http://github.com/plataformatec/devise and "Mongoid":http://mongoid.org/ which include extensive tests. This application is intended to be a basis for your own customized application and (in most cases) you will be writing your own tests for your required behavior.
+The application contains RSpec unit tests and Cucumber scenarios and steps. The tests are minimal and can be improved.
+
+Please send the author a message, create an issue, or submit a pull request if you can contribute improved RSpec or Cucumber files.
+
+After installing the application, run @rake -T@ to check that rake tasks for RSpec and Cucumber are available.
+
+Run @rake spec@ to run all RSpec tests.
+
+Run @rake cucumber@ (or more simply, @cucumber@) to run all Cucumber scenarios and steps.
 
 h2. Documentation and Support
 
@@ -275,10 +286,7 @@ h2. Contributing
 
 If you make improvements to this application, please share with others.
 
-* Fork the project on GitHub.
-* Make your feature addition or bug fix.
-* Commit with Git.
-* Send the author a pull request.
+Send the author a message, create an "issue":http://github.com/fortuity/rails3-mongoid-devise/issues, or fork the project and submit a pull request.
 
 If you add functionality to this application, create an alternative implementation, or build an application that is similar, please contact me and I'll add a note to the README so that others can find your work.
 
