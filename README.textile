@@ -2,7 +2,7 @@ h1. Rails3-Mongoid-Devise
 
 This example app combines "Mongoid":http://mongoid.org/ with "Devise":http://github.com/plataformatec/devise. Mongoid is a datastore that gives you quick development without schemas or migrations. Devise gives you ready-made authentication and user management.
 
-Best of all, there's a detailed tutorial (walk-through) to show how it's built.
+Best of all, there's a "detailed tutorial":http://github.com/fortuity/rails3-mongoid-devise/wiki/Tutorial-%28Walkthrough%29 (walk-through) to show how it's built.
 
 You can clone this app or generate a new Rails application using this app as a template.
 
@@ -17,7 +17,7 @@ h2. "Building It" Tutorial
 
 A complete walkthrough tutorial is available on the GitHub wiki:
 
-"View the Tutorial":http://github.com/fortuity/rails3-mongoid-devise/wiki/Tutorial-%28Walkthrough%29
+h4. "View the Tutorial":http://github.com/fortuity/rails3-mongoid-devise/wiki/Tutorial-%28Walkthrough%29
 
 The tutorial documents each step to follow to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere. Refer to the "Rails Guides":http://guides.rubyonrails.info/ site for help if you are a beginner. Or read Michael Hartl's "Ruby on Rails Tutorial":http://railstutorial.org/ book.
 
