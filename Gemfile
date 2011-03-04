@@ -7,3 +7,4 @@ gem "database_cleaner", :group => :test
 gem "cucumber-rails", :group => :test
 gem "capybara", :group => :test
 gem "devise", ">= 1.2.rc"
+gem 'mongoid-rspec', ">= 1.4.1", :group => :test
