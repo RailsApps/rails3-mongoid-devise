@@ -62,6 +62,10 @@ GEM
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    factory_girl (2.0.0.beta2)
+    factory_girl_rails (1.1.beta1)
+      factory_girl (~> 2.0.0.beta)
+      rails (>= 3.0.0)
     ffi (0.6.3)
       rake (>= 0.8.7)
     gherkin (2.3.3)
@@ -147,6 +151,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   devise (>= 1.2.rc)
+  factory_girl_rails (>= 1.1.beta1)
   mongoid (>= 2.0.0.rc.7)
   mongoid-rspec (>= 1.4.1)
   rails (>= 3.0.5)

@@ -8,3 +8,4 @@ gem "cucumber-rails", :group => :test
 gem "capybara", :group => :test
 gem "devise", ">= 1.2.rc"
 gem 'mongoid-rspec', ">= 1.4.1", :group => :test
+gem 'factory_girl_rails', ">= 1.1.beta1", :group => :test
