@@ -82,6 +82,10 @@ GEM
       mongo (~> 1.2)
       tzinfo (~> 0.3.22)
       will_paginate (~> 3.0.pre)
+    mongoid-rspec (1.4.1)
+      mongoid (~> 2.0.0.rc.7)
+      mongoid-rspec
+      rspec (~> 2)
     nokogiri (1.4.4)
     orm_adapter (0.0.4)
     polyglot (0.3.1)
@@ -144,5 +148,6 @@ DEPENDENCIES
   database_cleaner
   devise (>= 1.2.rc)
   mongoid (>= 2.0.0.rc.7)
+  mongoid-rspec (>= 1.4.1)
   rails (>= 3.0.5)
   rspec-rails (>= 2.5)
