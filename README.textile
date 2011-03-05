@@ -105,6 +105,10 @@ h4. Use "Recipes" to Customize an Application Template
 
 The "tutorial":http://github.com/fortuity/rails3-mongoid-devise/wiki/Tutorial-%28Walkthrough%29 shows how a customized application template can be assembled from "recipes." You can use the "RailsWizard.org":http://railswizard.org/ web site to create your own custom application template, adding any template recipes you want from the "rails-template-recipes":https://github.com/fortuity/rails-template-recipes  repository.
 
+h4. Edit the README
+
+If you're open sourcing the app on GitHub, please edit the README file to add a description of the app and your contact info. Changing the README is important if you're using a clone of the example app with this very helpful README file. I've already been mistaken (and contacted) as the author of apps that are copied from my example. It's amusing for me but annoying for others.
+
 h2. Getting Started
 
 h3. About Required Gems
