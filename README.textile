@@ -29,7 +29,7 @@ h4. "Plataformatec's Devise Example":http://github.com/plataformatec/devise_exam
 
 Simple Devise example using SQLite for Rails 3.
 
-h4. "Fernando Tapia Rico's rails3-mongoid-devise-omniauth (with Tutorial)":https://github.com/fertapric/rails3-mongoid-devise-omniauth
+h4. "Fernando Tapia Rico's rails3-mongoid-devise-omniauth with Tutorial":https://github.com/fertapric/rails3-mongoid-devise-omniauth
 
 Extended with "OmniAuth":https://github.com/intridea/omniauth (for authentication via OpenID, Facebook, OAuth, etc.)
 
