@@ -25,13 +25,27 @@ If you simply wish to modify the application for your own project, you can downl
 
 h2. Similar Applications
 
+h4. Plataformatec's Simple Devise Example
+
 For a simple Devise example using SQLite for Rails 3, see "plataformatec/devise_example":http://github.com/plataformatec/devise_example.
 
-Andi Altendorfer has extended the app at "http://github.com/iboard/CBA":http://github.com/iboard/CBA with
+h4. Fernando Tapia Rico's "rails3-mongoid-devise-omniauth"
+
+Fernando Tapia Rico has extended the app at "fertapric/rails3-mongoid-devise-omniauth":https://github.com/fertapric/rails3-mongoid-devise-omniauth with
+
+* "OmniAuth":https://github.com/intridea/omniauth (for authentication via OpenID, Facebook, OAuth, etc.)
+
+and provides a detailed tutorial.
+
+h4. Andi Altendorfer's "CBA"
+
+Andi Altendorfer has extended the app at "iboard/CBA":http://github.com/iboard/CBA with
 
 * "OmniAuth":https://github.com/intridea/omniauth (for authentication via OpenID, Facebook, OAuth, etc.)
 * "CanCan":https://github.com/ryanb/cancan (adding authorization by roles)
 * "Paperclip":https://github.com/thoughtbot/paperclip (for avatars)
+
+h4. Kristian Mandrup's "Cream"
 
 Kristian Mandrup has an application named "Cream":https://github.com/kristianmandrup/cream that integrates Devise, Roles and CanCan with Permits for a Rails 3 app with Mongoid or other ORMs.
 
