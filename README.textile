@@ -282,6 +282,8 @@ Run @rake spec@ to run all RSpec tests.
 
 Run @rake cucumber@ (or more simply, @cucumber@) to run all Cucumber scenarios and steps.
 
+You can browse and search the Cucumber features at the "Relish":http://relishapp.com/fortuity/rails3-mongoid-devise website.
+
 h2. Documentation and Support
 
 See the "Tutorial":http://github.com/fortuity/rails3-mongoid-devise/wiki/Tutorial-%28Walkthrough%29 for this app for details of how it was built. Please create an "Issue":http://github.com/fortuity/rails3-mongoid-devise/issues on GitHub if you identify any problems or have suggestions for improvements.

@@ -1,0 +1,5 @@
+- about_these_examples.md (About These Examples)
+- users:
+  - sign_in.feature
+  - sign_out.feature
+  - sign_up.feature
