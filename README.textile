@@ -25,29 +25,21 @@ If you simply wish to modify the application for your own project, you can downl
 
 h2. Similar Applications
 
-h4. Plataformatec's Simple Devise Example
+h4. "Plataformatec's Devise Example":http://github.com/plataformatec/devise_example
 
-For a simple Devise example using SQLite for Rails 3, see "plataformatec/devise_example":http://github.com/plataformatec/devise_example.
+Simple Devise example using SQLite for Rails 3.
 
-h4. Fernando Tapia Rico's "rails3-mongoid-devise-omniauth"
+h4. "Fernando Tapia Rico's rails3-mongoid-devise-omniauth (with Tutorial)":https://github.com/fertapric/rails3-mongoid-devise-omniauth
 
-Fernando Tapia Rico has extended the app at "fertapric/rails3-mongoid-devise-omniauth":https://github.com/fertapric/rails3-mongoid-devise-omniauth with
+Extended with "OmniAuth":https://github.com/intridea/omniauth (for authentication via OpenID, Facebook, OAuth, etc.)
 
-* "OmniAuth":https://github.com/intridea/omniauth (for authentication via OpenID, Facebook, OAuth, etc.)
+h4. "Andi Altendorfer's CBA":http://github.com/iboard/CBA
 
-and provides a detailed tutorial.
+Extended with "OmniAuth":https://github.com/intridea/omniauth (for authentication via OpenID, Facebook, OAuth, etc.), "CanCan":https://github.com/ryanb/cancan (adding authorization by roles), and "Paperclip":https://github.com/thoughtbot/paperclip (for avatars).
 
-h4. Andi Altendorfer's "CBA"
+h4. "Kristian Mandrup's Cream":https://github.com/kristianmandrup/cream
 
-Andi Altendorfer has extended the app at "iboard/CBA":http://github.com/iboard/CBA with
-
-* "OmniAuth":https://github.com/intridea/omniauth (for authentication via OpenID, Facebook, OAuth, etc.)
-* "CanCan":https://github.com/ryanb/cancan (adding authorization by roles)
-* "Paperclip":https://github.com/thoughtbot/paperclip (for avatars)
-
-h4. Kristian Mandrup's "Cream"
-
-Kristian Mandrup has an application named "Cream":https://github.com/kristianmandrup/cream that integrates Devise, Roles and CanCan with Permits for a Rails 3 app with Mongoid or other ORMs.
+Integrates Devise, Roles, and CanCan with Permits. For Mongoid or other ORMs.
 
 h2. What Is Implemented -- and What Is Not
 
