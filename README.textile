@@ -214,13 +214,17 @@ For your convenience, here are instructions for deploying your app to Heroku. He
 
 To deploy this app to Heroku, you must have a Heroku account. If you need to obtain one, visit "http://heroku.com/":http://heroku.com/ to set up an account. 
 
-Make sure the Heroku gem is in your *Gemfile*. If it's not, add it and run
+Make sure the Heroku gem is in your *Gemfile* "(check rubygems.org for the latest heroku gem)":http://rubygems.org/gems/heroku:
+
+@gem "heroku", ">= 1.18.3"@
+
+If it's not, add it and run
 
 @$ bundle install@
 
 to set up your gems again.
 
-Add your public key immediately after installing the heroku gem so that you can use git to push or clone Heroku app repositories. See "http://docs.heroku.com/heroku-command":http://docs.heroku.com/heroku-command for details.
+Add your public key immediately after installing the heroku gem so that you can use git to push or clone Heroku app repositories. See "http://devcenter.heroku.com/articles/heroku-command":http://devcenter.heroku.com/articles/heroku-command for details.
 
 h3. Create Your Application on Heroku
 
@@ -228,19 +232,31 @@ Use the Heroku create command to create and name your new app.
 
 @$ heroku create _myapp_@
 
+As of 9 February 2011, bamboo-ree-1.8.7 is the default stack for new Heroku apps.
+
+If you want to use Ruby 1.9.2, you can create your app with:
+
+@heroku create _myapp_ --stack bamboo-mri-1.9.2@
+
 h3. Heroku Add-on for MongoHQ
 
-You can use a Heroku add-on to deploy your app using the MongoHQ service.
+You can use a Heroku add-on to deploy your app using the MongoHQ service. See "details about the service (with pricing)":http://devcenter.heroku.com/articles/heroku-command and "details about installation":http://addons.heroku.com/mongohq.
 
 To enable the add-on, you can use the Heroku web interface or you can enter the following commands:
 
 @$ heroku addons:add mongohq:free@
 
+h3. Check Heroku Configuration
+
 You can check that everything has been added correctly by running:
 
 @$ heroku info --app myapp@
 
-h3. Set Up Your Application on Heroku
+If see @Stack: bamboo-ree-1.8.7@ and you want to use Ruby 1.9.2, you can migrate:
+
+@heroku stack:migrate bamboo-mri-1.9.2@
+
+h3. Push Your Application to Heroku
 
 Push your application to Heroku:
 
@@ -250,7 +266,31 @@ Initialize your application database:
 
 @$ heroku rake db:seed@
 
-If you get the error message "failed to connect to any given host:port", the *config/application.rb* file may not have the correct MongoHQ connection parameters.
+h3. Fix Problems Connecting to MongoHQ
+
+If you get the error message "failed to connect to any given host:port" or "Failed to connect to a master node at localhost:27017", the *config/mongoid.yml* file may not have the correct MongoHQ connection parameters.
+
+If the file *config/mongoid.yml* contains this:
+
+<pre>
+# set these environment variables on your prod server
+production:
+  host: <%= ENV['MONGOID_HOST'] %>
+  port: <%= ENV['MONGOID_PORT'] %>
+  username: <%= ENV['MONGOID_USERNAME'] %>
+  password: <%= ENV['MONGOID_PASSWORD'] %>
+  database: <%= ENV['MONGOID_DATABASE'] %>
+</pre>
+
+modify it to look like this:
+
+<pre>
+# set these environment variables on your prod server
+production:
+  uri: <%= ENV['MONGOHQ_URL'] %>
+</pre>
+
+Then push your application to Heroku again with @$ git push heroku master@ and run @$ heroku rake db:seed@ again.
 
 h3. Visit Your Site
 
