@@ -240,7 +240,7 @@ If you want to use Ruby 1.9.2, you can create your app with:
 
 h3. Heroku Add-on for MongoHQ
 
-You can use a Heroku add-on to deploy your app using the MongoHQ service. See "details about the service (with pricing)":http://devcenter.heroku.com/articles/heroku-command and "details about installation":http://addons.heroku.com/mongohq.
+You can use a Heroku add-on to deploy your app using the MongoHQ service. See "details about the service":http://addons.heroku.com/mongohq and "details about installation":http://devcenter.heroku.com/articles/mongohq.
 
 To enable the add-on, you can use the Heroku web interface or you can enter the following commands:
 
