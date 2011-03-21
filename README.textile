@@ -252,7 +252,7 @@ You can check that everything has been added correctly by running:
 
 @$ heroku info --app myapp@
 
-If see @Stack: bamboo-ree-1.8.7@ and you want to use Ruby 1.9.2, you can migrate:
+If you see @Stack: bamboo-ree-1.8.7@ and you want to use Ruby 1.9.2, you can migrate:
 
 @heroku stack:migrate bamboo-mri-1.9.2@
 
