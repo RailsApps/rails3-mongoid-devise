@@ -6,7 +6,7 @@ Best of all, there's a "detailed tutorial":http://github.com/fortuity/rails3-mon
 
 You can clone this app or generate a new Rails application using this app as a template.
 
-h2. Help and More Information
+h2. Follow on Twitter
 
 To keep up to date with development of this app, follow the author on Twitter:
 "http://twitter.com/railsinit":http://twitter.com/railsinit.
@@ -98,22 +98,25 @@ bq. You MUST be using Rails 3.0.4 or newer. Generating a Rails application from 
 
 This creates a new Rails app (with the @APP_NAME@ you provide) on your computer.
 
-The application template offers you the following options:
+The application generator template will ask you for your preferences:
 
-* set up your view files using the Haml templating language
-* use jQuery instead of Prototype as a Javascript framework
-* use RSpec instead of TestUnit for unit testing
-* use Cucumber for Behavior Driven Development
-* install the heroku gem for deployment to Heroku
-* use Yard instead of RDoc for documentation
+* Would you like to use jQuery instead of Prototype?
+* Would you like to use jQuery UI?
+* Would you like to use Haml instead of ERB?
+* Would you like to use RSpec instead of TestUnit?
+* Would you like to use factory_girl for test fixtures with RSpec?
+* Would you like to use Cucumber for your BDD?
+* Would you like to use Mongoid to connect to a MongoDB database?
+* Would you like to use Devise for authentication?
+* Would you like to set a robots.txt file to ban spiders?
 
 h4. Use "Recipes" to Customize an Application Template
 
-The "tutorial":http://github.com/fortuity/rails3-mongoid-devise/wiki/Tutorial-%28Walkthrough%29 shows how a customized application template can be assembled from "recipes." You can use the "RailsWizard.org":http://railswizard.org/ web site to create your own custom application template, adding any template recipes you want from the "rails-template-recipes":https://github.com/fortuity/rails-template-recipes  repository.
+The "tutorial":http://github.com/fortuity/rails3-mongoid-devise/wiki/Tutorial-%28Walkthrough%29 shows how a customized application template can be assembled from "recipes." The application template was created using the "rails3_devise_wizard":https://github.com/fortuity/rails3_devise_wizard gem which provides a convenient way to assemble a reusable application template by selecting various "recipes" for popular Rails development packages.
 
-h4. Edit the README
+h4. Please Remember: Edit the README
 
-If you're open sourcing the app on GitHub, please edit the README file to add a description of the app and your contact info. Changing the README is important if you're using a clone of the example app with this very helpful README file. I've already been mistaken (and contacted) as the author of apps that are copied from my example. It's amusing for me but annoying for others.
+If you're open sourcing the app on GitHub, please edit the README file to add a description of the app and your contact info. Changing the README is important if you're using a clone of the example app. I've been mistaken (and contacted) as the author of apps that are copied from my example.
 
 h2. Getting Started
 
@@ -121,12 +124,12 @@ h3. About Required Gems
 
 The application uses the following gems. I recommend checking for newer versions of these gems before proceeding:
 
-* rails (version 3.0.5) "(check rubygems.org for the rails gem)":http://rubygems.org/gems/rails
-* mongoid (version 2.0.0.rc.8) "(Check rubygems.org for the mongoid gem)":http://rubygems.org/gems/mongoid
-* bson_ext (version 1.2.4) "(Check rubygems.org for the bson_ext gem)":http://rubygems.org/gems/bson_ext
-* devise (version 1.2.0) "(Check rubygems.org for the devise gem)":http://rubygems.org/gems/devise
+* rails "(check rubygems.org for the rails gem)":http://rubygems.org/gems/rails
+* mongoid "(Check rubygems.org for the mongoid gem)":http://rubygems.org/gems/mongoid
+* bson_ext "(Check rubygems.org for the bson_ext gem)":http://rubygems.org/gems/bson_ext
+* devise "(Check rubygems.org for the devise gem)":http://rubygems.org/gems/devise
 
-The app has been tested with the indicated versions. If you are able to build the app with a newer gem, please create an "issue":http://github.com/fortuity/rails3-mongoid-devise/issues on GitHub and I will update the app.
+If you are able to build the app with a newer gem, please create an "issue":http://github.com/fortuity/rails3-mongoid-devise/issues on GitHub and I will update the app.
 
 h3. Install the Required Gems
 
@@ -216,7 +219,7 @@ To deploy this app to Heroku, you must have a Heroku account. If you need to obt
 
 Make sure the Heroku gem is in your *Gemfile* "(check rubygems.org for the latest heroku gem)":http://rubygems.org/gems/heroku:
 
-@gem "heroku", ">= 1.19.1"@
+@gem "heroku"
 
 If it's not, add it and run
 
