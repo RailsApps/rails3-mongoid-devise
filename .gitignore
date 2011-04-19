@@ -1,5 +1,11 @@
 #----------------------------------------------------------------------------
 # Ignore these files when commiting to a git repository
+#
+# The original version of this file is found here:
+# https://github.com/fortuity/rails3-gitignore/raw/master/gitignore.txt
+#
+# Corrections? Improvements? Create a GitHub issue: 
+# https://github.com/fortuity/rails3-gitignore/issues
 #----------------------------------------------------------------------------
 
 # bundler state
@@ -27,12 +33,10 @@ tmp/*
 /doc/app/
 /doc/features.html
 /doc/specs.html
-/log/*
 /public/cache
 /public/stylesheets/compiled
 /public/system
 /spec/tmp/*
-/tmp/*
 /cache
 /capybara*
 /capybara-*.html
@@ -46,14 +50,14 @@ tmp/*
 # scm revert files
 **.orig
 
-# mac finder poop
+# Mac finder artifacts
 .DS_Store
 
-# netbeans project directory
+# Netbeans project directory
 /nbproject/
 
-# textmate project files
+# Textmate project files
 /*.tmpproj
 
-# vim poop
+# vim artifacts
 **.swp
