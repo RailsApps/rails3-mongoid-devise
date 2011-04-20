@@ -57,20 +57,19 @@ Before running this app, you need to install
 
 I recommend installing rvm, the "Ruby Version Manager":http://rvm.beginrescueend.com/, to manage multiple versions of Rails.
 
-If you are using rvm, you can see a list of the Ruby versions currently installed:
-@$ rvm list@
-
 Check that appropriate versions of Ruby and Rails are installed in your development environment:
 @$ ruby -v@
 @$ rails -v@
 
+h4. Installing MongoDB
+
 If you don't have MongoDB installed on your computer, you'll need to install it and set it up to be always running on your computer (run at launch). On Mac OS X, the easiest way to install MongoDB is to install "Homebrew":http://mxcl.github.com/homebrew/ and then run the following:
 
 <pre>
-brew install mongo
-sudo mkdir -p /data/db
-sudo chmod -Rv 777 /data/
+brew install mongodb
 </pre>
+
+Homebrew will provide post-installation instructions to get MongoDB running. The last line of the installation output shows you the MongoDB install location (for example, */usr/local/Cellar/mongodb/1.8.0-x86_64*).
 
 h2. Getting the Application
 
