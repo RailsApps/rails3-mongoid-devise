@@ -1,4 +1,4 @@
-h1. Rails3-Mongoid-Devise
+h1. Rails3 + Mongoid + Devise
 
 This example app combines "Mongoid":http://mongoid.org/ with "Devise":http://github.com/plataformatec/devise. Mongoid is a datastore that gives you quick development without schemas or migrations. Devise gives you ready-made authentication and user management.
 
@@ -19,15 +19,19 @@ A complete walkthrough tutorial is available on the GitHub wiki:
 
 h4. "View the Tutorial":http://github.com/fortuity/rails3-mongoid-devise/wiki/Tutorial-%28Walkthrough%29
 
-The tutorial documents each step to follow to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere. Refer to the "Rails Guides":http://guides.rubyonrails.info/ site for help if you are a beginner. Or read Michael Hartl's "Ruby on Rails Tutorial":http://railstutorial.org/ book.
+The tutorial documents each step to follow to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere.
 
 If you simply wish to modify the application for your own project, you can download the application and set it up as described below, without following the tutorial.
 
 h2. Similar Applications
 
-h4. "Plataformatec's Devise Example":http://github.com/plataformatec/devise_example
+h4. "Plataformatec's Simple Devise Example":http://github.com/plataformatec/devise_example
 
 Simple Devise example using SQLite for Rails 3.
+
+h4. "Rails3 + Devise + RSpec + Cucumber":https://github.com/fortuity/rails3-devise-rspec-cucumber
+
+Daniel Kehoe's example Rails 3 app with Devise + RSpec + Cucumber. With a detailed tutorial.
 
 h4. "Fernando Tapia Rico's rails3-mongoid-devise-omniauth with Tutorial":https://github.com/fertapric/rails3-mongoid-devise-omniauth
 
