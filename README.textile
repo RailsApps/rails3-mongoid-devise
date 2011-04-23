@@ -52,7 +52,7 @@ h2. Dependencies
 Before running this app, you need to install 
 
 * The Ruby language (version 1.8.7 or 1.9.2)
-* Rails (version 3.0.5)
+* Rails (version 3.0.7)
 * A working installation of "MongoDB":http://www.mongodb.org/ (version 1.6.0 or newer)
 
 I recommend installing rvm, the "Ruby Version Manager":http://rvm.beginrescueend.com/, to manage multiple versions of Rails.

@@ -5,39 +5,40 @@
  * https://github.com/rails/jquery-ujs
 
  * Uploading file using rails.js
+ * =============================
  *
  * By default, browsers do not allow files to be uploaded via AJAX. As a result, if there are any non-blank file fields
- * in the remote form, this adapter aborts the AJAX submission and submits the form through standard means.
+ * in the remote form, this adapter aborts the AJAX submission and allows the form to submit through standard means.
  *
- * When AJAX submission is aborted then event `ajax:aborted:file` is fired and this allows you to bind your own
- * handler to process the form submission the way you want.
- *
- * For example if you want remote form submission to be cancelled and you do not want to submit the form through
- * standard means then you can write following handler.
+ * The `ajax:aborted:file` event allows you to bind your own handler to process the form submission however you wish.
  *
  * Ex:
- *     $('form').live('ajax:aborted:file', function(){
- *       // Implement own remote file-transfer handler here.
+ *     $('form').live('ajax:aborted:file', function(event, elements){
+ *       // Implement own remote file-transfer handler here for non-blank file inputs passed in `elements`.
+ *       // Returning false in this handler tells rails.js to disallow standard form submission
  *       return false;
  *     });
  *
- * The `ajax:aborted:file` event is fired when a form is submitted and both conditions are met:
- *   a) file-type input field is detected, and
- *   b) the value of the input:file field is not blank.
+ * The `ajax:aborted:file` event is fired when a file-type input is detected with a non-blank value.
  *
  * Third-party tools can use this hook to detect when an AJAX file upload is attempted, and then use
  * techniques like the iframe method to upload the file instead.
  *
- * Similarly, rails.js aborts AJAX form submissions if any non-blank input[required] fields are detected,
- * providing the `ajax:aborted:required` hook.
- * Unlike file uploads, however, blank required input fields cancel the whole form submission by default.
+ * Required fields in rails.js
+ * ===========================
  *
- * The default behavior of aborting the remote form submission when required inputs are missing, may be
- * changed (thereby submitting the form via AJAX anyway) by binding a handler function that returns
- * false to the `ajax:aborted:required` hook.
+ * If any blank required inputs (required="required") are detected in the remote form, the whole form submission
+ * is canceled. Note that this is unlike file inputs, which still allow standard (non-AJAX) form submission.
+ *
+ * The `ajax:aborted:required` event allows you to bind your own handler to inform the user of blank required inputs.
+ *
+ * !! Note that Opera does not fire the form's submit event if there are blank required inputs, so this event may never
+ *    get fired in Opera. This event is what causes other browsers to exhibit the same submit-aborting behavior.
  *
  * Ex:
- *     $('form').live('ajax:aborted:required', function(){
+ *     $('form').live('ajax:aborted:required', function(event, elements){
+ *       // Returning false in this handler tells rails.js to submit the form anyway.
+ *       // The blank required inputs are passed to this function in `elements`.
  *       return ! confirm("Would you like to submit the form with missing info?");
  *     });
  */
@@ -48,6 +49,27 @@
 	var rails;
 
 	$.rails = rails = {
+
+		// Link elements bound by jquery-ujs
+		linkClickSelector: 'a[data-confirm], a[data-method], a[data-remote]',
+
+		// Form elements bound by jquery-ujs
+		formSubmitSelector: 'form',
+
+		// Form input elements bound by jquery-ujs
+		formInputClickSelector: 'form input[type=submit], form input[type=image], form button[type=submit], form button:not([type])',
+
+		// Form input elements disabled during form submission
+		disableSelector: 'input[data-disable-with], button[data-disable-with], textarea[data-disable-with]',
+
+		// Form input elements re-enabled after form submission
+		enableSelector: 'input[data-disable-with]:disabled, button[data-disable-with]:disabled, textarea[data-disable-with]:disabled',
+
+		// Form required input elements
+		requiredInputSelector: 'input[name][required],textarea[name][required]',
+
+		// Form file input elements
+		fileInputSelector: 'input:file',
 
 		// Make sure that every Ajax request sends the CSRF token
 		CSRFProtection: function(xhr) {
@@ -125,8 +147,13 @@
 			form.submit();
 		},
 
+		/* Disables form elements:
+			- Caches element value in 'ujs:enable-with' data store
+			- Replaces element text with value of 'data-disable-with' attribute
+			- Adds disabled=disabled attribute
+		*/
 		disableFormElements: function(form) {
-			form.find('input[data-disable-with], button[data-disable-with]').each(function() {
+			form.find(rails.disableSelector).each(function() {
 				var element = $(this), method = element.is('button') ? 'html' : 'val';
 				element.data('ujs:enable-with', element[method]());
 				element[method](element.data('disable-with'));
@@ -134,43 +161,45 @@
 			});
 		},
 
+		/* Re-enables disabled form elements:
+			- Replaces element text with cached value from 'ujs:enable-with' data store (created in `disableFormElements`)
+			- Removes disabled attribute
+		*/
 		enableFormElements: function(form) {
-			form.find('input[data-disable-with]:disabled, button[data-disable-with]:disabled').each(function() {
+			form.find(rails.enableSelector).each(function() {
 				var element = $(this), method = element.is('button') ? 'html' : 'val';
 				if (element.data('ujs:enable-with')) element[method](element.data('ujs:enable-with'));
 				element.removeAttr('disabled');
 			});
 		},
 
+		// If message provided in 'data-confirm' attribute, fires `confirm` event and returns result of confirm dialog.
+		// Attaching a handler to the element's `confirm` event that returns false cancels the confirm dialog.
 		allowAction: function(element) {
 			var message = element.data('confirm');
 			return !message || (rails.fire(element, 'confirm') && confirm(message));
 		},
 
-		blankInputs: function(form, specifiedSelector) {
-			var blankExists = false,
-				selector = specifiedSelector || 'input';
+		// Helper function which checks for blank inputs in a form that match the specified CSS selector
+		blankInputs: function(form, specifiedSelector, nonBlank) {
+			var inputs = $(), input,
+				selector = specifiedSelector || 'input,textarea';
 			form.find(selector).each(function() {
-				if (!$(this).val()) {
-					blankExists = true;
-					return false; //this terminates the each loop
+				input = $(this);
+				// Collect non-blank inputs if nonBlank option is true, otherwise, collect blank inputs
+				if (nonBlank ? input.val() : !input.val()) {
+					inputs = inputs.add(input);
 				}
 			});
-			return blankExists;
+			return inputs.length ? inputs : false;
 		},
 
+		// Helper function which checks for non-blank inputs in a form that match the specified CSS selector
 		nonBlankInputs: function(form, specifiedSelector) {
-			var nonBlankExists = false,
-				selector = specifiedSelector || 'input';
-			form.find(selector).each(function() {
-				if ($(this).val()) {
-					nonBlankExists = true;
-					return false; //this terminates the each loop
-				}
-			});
-			return nonBlankExists;
+			return rails.blankInputs(form, specifiedSelector, true); // true specifies nonBlank
 		},
 
+		// Helper function, needed to provide consistent behavior in IE
 		stopEverything: function(e) {
 			e.stopImmediatePropagation();
 			return false;
@@ -196,7 +225,7 @@
 		$(document).ajaxSend(function(e, xhr){ rails.CSRFProtection(xhr); });
 	}
 
-	$('a[data-confirm], a[data-method], a[data-remote]').live('click.rails', function(e) {
+	$(rails.linkClickSelector).live('click.rails', function(e) {
 		var link = $(this);
 		if (!rails.allowAction(link)) return rails.stopEverything(e);
 
@@ -209,24 +238,28 @@
 		}
 	});
 
-	$('form').live('submit.rails', function(e) {
-		var form = $(this), remote = form.data('remote') !== undefined;
+	$(rails.formSubmitSelector).live('submit.rails', function(e) {
+		var form = $(this),
+			remote = form.data('remote') !== undefined,
+			blankRequiredInputs = rails.blankInputs(form, rails.requiredInputSelector),
+			nonBlankFileInputs = rails.nonBlankInputs(form, rails.fileInputSelector);
+
 		if (!rails.allowAction(form)) return rails.stopEverything(e);
 
 		// skip other logic when required values are missing or file upload is present
-		if (rails.blankInputs(form, 'input[name][required]') && rails.fire(form, 'ajax:aborted:required')) {
+		if (blankRequiredInputs && rails.fire(form, 'ajax:aborted:required', [blankRequiredInputs])) {
 			return !remote;
 		}
 
-		if (rails.nonBlankInputs(form, 'input:file')) {
-			return rails.fire(form, 'ajax:aborted:file');
-		}
-
-		// If browser does not support submit bubbling, then this live-binding will be called before direct
-		// bindings. Therefore, we should directly call any direct bindings before remotely submitting form.
-		if (!$.support.submitBubbles && rails.callFormSubmitBindings(form) === false) return rails.stopEverything(e);
-
 		if (remote) {
+			if (nonBlankFileInputs) {
+				return rails.fire(form, 'ajax:aborted:file', [nonBlankFileInputs]);
+			}
+
+			// If browser does not support submit bubbling, then this live-binding will be called before direct
+			// bindings. Therefore, we should directly call any direct bindings before remotely submitting form.
+			if (!$.support.submitBubbles && rails.callFormSubmitBindings(form) === false) return rails.stopEverything(e);
+
 			rails.handleRemote(form);
 			return false;
 		} else {
@@ -235,10 +268,10 @@
 		}
 	});
 
-	$('form input[type=submit], form input[type=image], form button[type=submit], form button:not([type])').live('click.rails', function() {
+	$(rails.formInputClickSelector).live('click.rails', function(event) {
 		var button = $(this);
 
-		if (!rails.allowAction(button)) return rails.stopEverything(e);
+		if (!rails.allowAction(button)) return rails.stopEverything(event);
 
 		// register the pressed submit button
 		var name = button.attr('name'),
@@ -247,11 +280,11 @@
 		button.closest('form').data('ujs:submit-button', data);
 	});
 
-	$('form').live('ajax:beforeSend.rails', function(event) {
+	$(rails.formSubmitSelector).live('ajax:beforeSend.rails', function(event) {
 		if (this == event.target) rails.disableFormElements($(this));
 	});
 
-	$('form').live('ajax:complete.rails', function(event) {
+	$(rails.formSubmitSelector).live('ajax:complete.rails', function(event) {
 		if (this == event.target) rails.enableFormElements($(this));
 	});
 
