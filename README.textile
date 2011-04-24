@@ -8,8 +8,8 @@ You can clone this app or generate a new Rails application using this app as a t
 
 h2. Follow on Twitter
 
-To keep up to date with development of this app, follow the author on Twitter:
-"http://twitter.com/railsinit":http://twitter.com/railsinit.
+To keep up to date with development of this app, follow the project on Twitter:
+"http://twitter.com/rails_apps":http://twitter.com/rails_apps.
 
 Any issues? Please create an "Issue":http://github.com/fortuity/rails3-mongoid-devise/issues on GitHub.
 
@@ -352,8 +352,8 @@ h2. Credits
 
 Daniel Kehoe ("http://danielkehoe.com/":http://danielkehoe.com/) implemented the application and wrote the tutorial.
 
-Is the app useful to you? Follow me on Twitter:
-"http://twitter.com/railsinit":http://twitter.com/railsinit
+Is the app useful to you? Follow the project on Twitter:
+"http://twitter.com/rails_apps":http://twitter.com/rails_apps
 and tweet some praise. I'd love to know you were helped out by what I've put together.
 
 Any issues? Please create an "Issue":http://github.com/fortuity/rails3-mongoid-devise/issues on GitHub.
