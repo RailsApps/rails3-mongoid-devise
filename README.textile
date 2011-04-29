@@ -1,6 +1,6 @@
 h1. Rails3 + Mongoid + Devise
 
-This example app combines "Mongoid":http://mongoid.org/ with "Devise":http://github.com/plataformatec/devise. Mongoid is a datastore that gives you quick development without schemas or migrations. Devise gives you ready-made authentication and user management.
+This example app combines "Mongoid":http://mongoid.org/ with "Devise":http://github.com/plataformatec/devise for a Rails 3 starter app. Mongoid is a datastore that gives you quick development without schemas or migrations. Devise gives you ready-made authentication and user management.
 
 Best of all, there's a "detailed tutorial":http://github.com/fortuity/rails3-mongoid-devise/wiki/Tutorial-%28Walkthrough%29 (walk-through) to show how it's built.
 
@@ -314,7 +314,7 @@ h2. Customizing
 
 "Devise":http://github.com/plataformatec/devise provides a variety of features for implementing authentication. See the Devise documentation for options.
 
-This application provides no useful functionality apart from demonstrating Devise and Mongoid working together on Rails 3. Add any models, controllers, and views that you need.
+This example application and tutorial demonstrates Devise and Mongoid working together on Rails 3. Add any models, controllers, and views that you need.
 
 h2. Testing
 
