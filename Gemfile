@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
-gem 'rails', '3.0.6'
+gem 'rails', '3.0.7'
 gem "rspec-rails", ">= 2.5.0", :group => [:development, :test]
 gem "database_cleaner", ">= 0.6.7", :group => :test
 gem "mongoid-rspec", ">= 1.4.1", :group => :test
