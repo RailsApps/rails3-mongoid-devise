@@ -29,7 +29,7 @@ This is a demonstration application that allows you to visit a home page and see
 
 h4. Similar Examples and Tutorials
 
-|_. Author |_. Devise |_. Comments |
+|_. Author |_. Example App |_. Comments |
 | Plataformatec | "Rails 3 Devise Example":http://github.com/plataformatec/devise_example | Simple example using SQLite |
 | Daniel Kehoe | "Rails 3, Devise, RSpec, Cucumber":https://github.com/fortuity/rails3-devise-rspec-cucumber | Detailed tutorial, app template, starter app, using SQLite |
 | Daniel Kehoe | "Rails 3, OmniAuth, Mongoid":https://github.com/fortuity/rails3-mongoid-omniauth | Detailed tutorial, app template, starter app, using MongoDB |
