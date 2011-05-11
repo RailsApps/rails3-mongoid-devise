@@ -6,12 +6,12 @@ Best of all, there's a "detailed tutorial":http://github.com/fortuity/rails3-mon
 
 You can clone this app or generate a new Rails application using this app as a template.
 
-h2. Follow on Twitter
-
-To keep up to date with development of this app, follow the project on Twitter:
-"http://twitter.com/rails_apps":http://twitter.com/rails_apps.
-
 Any issues? Please create an "Issue":http://github.com/fortuity/rails3-mongoid-devise/issues on GitHub.
+
+h2. !http://twitter-badges.s3.amazonaws.com/t_logo-a.png(Follow on Twitter)!:http://www.twitter.com/rails_apps Follow on Twitter
+
+To keep up to date, follow the project on Twitter:
+"http://twitter.com/rails_apps":http://twitter.com/rails_apps.
 
 h2. "Building It" Tutorial
 
@@ -354,8 +354,14 @@ Thank you for improvements to the tutorial by contributors:
 * "Justin Workman":https://github.com/xtagon
 * "Tom von Schwerdtner":https://github.com/tvon
 
+h4. Web Analytics Powered by Clicky
+
+!http://static.getclicky.com/media/links/badge.gif(Clicky Web Analytics Badge)!:http://getclicky.com/66423523
+
+!http://in.getclicky.com/66423523ns.gif(Remove this 1x1 image to disable web analytics)!
+
 h2. License
 
-h3. Public Domain Dedication
+h4. Public Domain Dedication
 
 This work is a compilation and derivation from other previously released works. With the exception of various included works, which may be restricted by other licenses, the author or authors of this code dedicate any and all copyright interest in this code to the public domain. We make this dedication for the benefit of the public at large and to the detriment of our heirs and successors. We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this code under copyright law.
