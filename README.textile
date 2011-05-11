@@ -354,12 +354,6 @@ Thank you for improvements to the tutorial by contributors:
 * "Justin Workman":https://github.com/xtagon
 * "Tom von Schwerdtner":https://github.com/tvon
 
-h4. Web Analytics Powered by Clicky
-
-!http://static.getclicky.com/media/links/badge.gif(Clicky Web Analytics Badge)!:http://getclicky.com/66423523
-
-!http://in.getclicky.com/66423523ns.gif(Remove this 1x1 image to disable web analytics)!
-
 h2. License
 
 h4. Public Domain Dedication
