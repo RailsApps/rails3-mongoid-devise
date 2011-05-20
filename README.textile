@@ -20,7 +20,7 @@ A complete walkthrough tutorial is available on the GitHub wiki:
 
 h4. "View the Tutorial":http://github.com/railsapps/rails3-mongoid-devise/wiki/Tutorial
 
-The tutorial documents each step to follow to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere. See a list of "Rails books and online introductions":http://railsapps.github.com/rails-books.html for recommended reading.
+The tutorial documents each step to follow to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere. See a list of "Rails books and online instruction":http://railsapps.github.com/rails-books.html for recommended reading.
 
 If you simply wish to modify the application for your own project, you can download the application and set it up as described below, without following the tutorial.
 
