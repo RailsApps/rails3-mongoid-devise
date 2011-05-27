@@ -10,7 +10,7 @@ Any issues? Please create a "GitHub issue":http://github.com/railsapps/rails3-mo
 
 h2. !http://twitter-badges.s3.amazonaws.com/t_logo-a.png(Follow on Twitter)!:http://www.twitter.com/rails_apps Follow on Twitter !http://railsapps.github.com/images/mailing-list-icon.jpg(Join the Mailing List)!:http://eepurl.com/dQx3o Join the Mailing List
 
-Follow the project on Twitter: "http://twitter.com/rails_apps":http://twitter.com/rails_apps. Please tweet some praise if you like what you've found.
+Follow the project on Twitter: "rails_apps":http://twitter.com/rails_apps. Please tweet some praise if you like what you've found.
 
 <a href="http://eepurl.com/dQx3o">Join the email list</a> (low volume, announcements only) for project updates and my tips about Rails resources.
 
@@ -20,7 +20,7 @@ A complete walkthrough tutorial is available on the GitHub wiki:
 
 h4. "View the Tutorial":http://github.com/railsapps/rails3-mongoid-devise/wiki/Tutorial
 
-The tutorial documents each step to follow to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere. See a list of "Rails books and online instruction":http://railsapps.github.com/rails-books.html for recommended reading.
+The tutorial documents each step to follow to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere. See a list of "recommended books and online resources for learning Rails":http://railsapps.github.com/best-recommended-learning-rails-books-resources.html.
 
 If you simply wish to modify the application for your own project, you can download the application and set it up as described below, without following the tutorial.
 
@@ -41,15 +41,13 @@ h2. Dependencies
 
 Before running this app, you need to install 
 
-* The Ruby language (version 1.8.7 or 1.9.2)
-* Rails
+* The Ruby language (version 1.9.2)
+* Rails 3.1
 * A working installation of "MongoDB":http://www.mongodb.org/ (version 1.6.0 or newer)
 
-I recommend installing rvm, the "Ruby Version Manager":http://rvm.beginrescueend.com/, to manage multiple versions of Rails.
+This repository also contains branches for earlier version of Rails.
 
-Check that appropriate versions of Ruby and Rails are installed in your development environment:
-@$ ruby -v@
-@$ rails -v@
+See "Managing Rails Versions and Gems":http://railsapps.github.com/managing-rails-versions-gems.html for detailed instructions and advice.
 
 h4. Installing MongoDB
 
@@ -109,23 +107,25 @@ If you're open sourcing the app on GitHub, please edit the README file to add a 
 
 h2. Getting Started
 
-h3. About Required Gems
+h4. About Required Gems
 
-The application uses the following gems. I recommend checking for newer versions of these gems before proceeding:
+The application uses the following gems:
 
-* rails "(check rubygems.org for a newer gem)":http://rubygems.org/gems/rails
-* mongoid "(Check rubygems.org for a newer gem)":http://rubygems.org/gems/mongoid
-* bson_ext "(Check rubygems.org for a newer gem)":http://rubygems.org/gems/bson_ext
-* devise "(Check rubygems.org for a newer gem)":http://rubygems.org/gems/devise
-* rspec-rails "(Check rubygems.org for a newer gem)":http://rubygems.org/gems/rspec-rails
-* database_cleaner "(Check rubygems.org for a newer gem)":http://rubygems.org/gems/database_cleaner
-* factory_girl_rails "(Check rubygems.org for a newer gem)":http://rubygems.org/gems/factory_girl_rails
-* cucumber-rails "(Check rubygems.org for a newer gem)":http://rubygems.org/gems/cucumber-rails
-* capybara "(Check rubygems.org for a newer gem)":http://rubygems.org/gems/capybara
+* rails
+* mongoid
+* bson_ext
+* devise
+* rspec-rails
+* database_cleaner
+* factory_girl_rails
+* cucumber-rails
+* capybara
 
-If you are able to build the app with a newer gem, please create an "issue":http://github.com/railsapps/rails3-mongoid-devise/issues on GitHub and I will update the app.
+See an example "Rails 3.1 Gemfile":http://railsapps.github.com/rails-3-1-example-gemfile.html.
 
-h3. Install the Required Gems
+See "Managing Rails Versions and Gems":http://railsapps.github.com/managing-rails-versions-gems.html for advice and details.
+
+h4. Install the Required Gems
 
 Install the required gems on your computer:
 
@@ -137,7 +137,7 @@ You can check which gems are installed on your computer with:
 
 Keep in mind that you have installed these gems locally. When you deploy the app to another server, the same gems (and versions) must be available.
 
-h3. Configure Mongoid
+h4. Configure Mongoid
 
 Mongoid provides access to the MongoDB database from Rails.
 
@@ -145,7 +145,7 @@ You can use the default configuration found in the file *config/mongoid.yml*.
 
 If you want to see what's in your MongoDB databases, I recommend using the "MongoHub":http://mongohub.todayclose.com/ app (for Mac OS X).
 
-h3. Set Up Configuration for Devise
+h4. Set Up Configuration for Devise
 
 This app uses Devise for user management and authentication. Devise is at "http://github.com/plataformatec/devise":http://github.com/plataformatec/devise.
 
@@ -153,7 +153,7 @@ You can modify the configuration file for Devise if you want to use something ot
 
 *config/initializers/devise.rb*
 
-h3. Configure Email for Devise
+h4. Configure Email for Devise
 
 Configure email by modifying
 
@@ -168,7 +168,7 @@ You may need to set values for your mailhost in
 
 h2. Create a Default User
 
-h3. Set Up a Database Seed File
+h4. Set Up a Database Seed File
 
 You'll want to set up a default user so you can easily log in to test the app. You can modify the file *db/seeds.rb* for your own name, email and password:
 
@@ -182,13 +182,13 @@ puts 'New user created: ' << user.name
 
 Use the defaults or change the values for name, email, and password as you wish.
 
-h3. Seed the Database
+h4. Seed the Database
 
 Add the default user to the MongoDB database by running the command:
 
 @$ rake db:seed@
 
-h3. Test the App
+h4. Test the App
 
 You can check that your app runs properly by entering the command
 
@@ -250,7 +250,7 @@ h2. Credits
 Daniel Kehoe ("http://danielkehoe.com/":http://danielkehoe.com/) implemented the application and wrote the tutorial.
 
 Is the app useful to you? Follow the project on Twitter:
-"http://twitter.com/rails_apps":http://twitter.com/rails_apps
+"rails_apps":http://twitter.com/rails_apps
 and tweet some praise. I'd love to know you were helped out by what I've put together.
 
 h4. Contributors
