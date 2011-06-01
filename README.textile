@@ -39,7 +39,7 @@ See a list of additional "Rails examples, tutorials, and starter apps":http://ra
 
 h2. Dependencies
 
-Before generating your application, you will need:
+Before running this app, you will need:
 
 * The Ruby language (version 1.9.2)
 ** @$ ruby -v@
@@ -47,6 +47,7 @@ Before generating your application, you will need:
 ** @$ rails -v@
 * Rake 0.9.1
 ** @$ rake --version@
+* A working installation of "MongoDB":http://www.mongodb.org/ (version 1.6.0 or newer)
 
 You must update the standard Ruby installation from Rake 0.8.7 to Rake 0.9.1 before using the application templates to generate a new Rails app.
 
