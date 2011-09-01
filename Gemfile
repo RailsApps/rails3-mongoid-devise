@@ -1,8 +1,8 @@
 source 'http://rubygems.org'
-gem 'rails', '3.1.0.rc6'
+gem 'rails', '3.1.0'
 group :assets do
-  gem 'sass-rails', "  ~> 3.1.0.rc"
-  gem 'coffee-rails', "~> 3.1.0.rc"
+  gem 'sass-rails', "  ~> 3.1.0"
+  gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
 end
 gem 'jquery-rails'
@@ -14,5 +14,5 @@ gem "cucumber-rails", ">= 1.0.2", :group => :test
 gem "capybara", ">= 1.0.1", :group => :test
 gem "launchy", ">= 2.0.5", :group => :test
 gem "bson_ext", ">= 1.3.1"
-gem "mongoid", ">= 2.1.9"
-gem "devise", ">= 1.4.2"
+gem "mongoid", ">= 2.2.0"
+gem "devise", ">= 1.4.4"
