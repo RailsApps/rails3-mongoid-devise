@@ -1,6 +1,6 @@
-h1. Rails 3 + Mongoid + Devise
+h1. Rails 3.1 + Mongoid + Devise
 
-This is an example *Rails 3 application* that combines *Devise* with *Mongoid*. The "Devise":http://github.com/plataformatec/devise gem gives you ready-made authentication and user management. MongoDB is used as a datastore with the "Mongoid":http://mongoid.org/  gem for quick development without schemas or migrations.
+This is an example application for Rails 3.1.1 that combines Devise with Mongoid. The "Devise":http://github.com/plataformatec/devise gem gives you ready-made authentication and user management. MongoDB is used as a datastore with the "Mongoid":http://mongoid.org/  gem for quick development without schemas or migrations.
 
 Best of all, there's a "detailed tutorial":http://github.com/RailsApps/rails3-mongoid-devise/wiki/Tutorial (walk-through) to show how it's built.
 
@@ -43,7 +43,7 @@ Before running this app, you will need:
 
 * The Ruby language (version 1.9.2)
 ** @$ ruby -v@
-* Rails 3.1
+* Rails 3.1.1
 ** @$ rails -v@
 * Rake 0.9.2
 ** @$ rake --version@
@@ -81,28 +81,31 @@ You can use an application template to generate a new version of the example app
 
 Use the command:
 
-@$ rails new APP_NAME -m https://github.com/RailsApps/rails3-application-templates/raw/master/rails3-mongoid-devise-template.rb -T -O@
+@$ rails new myapp -m https://github.com/RailsApps/rails3-application-templates/raw/master/rails3-mongoid-devise-template.rb -T -O@
 
 Use the @-T -O@ flags to skip Test::Unit files and Active Record files. Add the @-J@ flag to skip Prototype files for Rails 3.0 (not needed for Rails 3.1).
 
 bq. You MUST be using Rails 3.0.4 or newer. Generating a Rails application from an “HTTPS” URL does not work in Rails 3.0.3 and earlier versions.
 
-This creates a new Rails app (with the @APP_NAME@ you provide) on your computer.
+This creates a new Rails app (with the name @myapp@) on your computer.
 
 The application generator template will ask you for your preferences:
 
-* Would you like to use jQuery instead of Prototype? (for Rails 3.0)
-* Would you like to use jQuery UI? (for Rails 3.0 or 3.1)
+* Would you like to use jQuery?
+* Would you like to use jQuery UI?
 * Would you like to use Haml instead of ERB?
 * Would you like to use RSpec instead of TestUnit?
 * Would you like to use factory_girl for test fixtures with RSpec?
 * Would you like to use Cucumber for your BDD?
+* Would you like to use Guard to automate your workflow?
 * Would you like to use Mongoid to connect to a MongoDB database?
 * Would you like to use Devise for authentication?
 * Would you like to install HTML5 Boilerplate?
+* Normalize CSS and use Skeleton boilerplate?
 * Normalize CSS for consistent styling across browsers?
 * Completely reset all CSS to eliminate styling?
 * Would you like to set a robots.txt file to ban spiders?
+* Would you like to use ‘rails-footnotes’ during development?
 
 h4. Use "Recipes" to Customize an Application Template
 
@@ -128,7 +131,7 @@ The application uses the following gems:
 * "bson_ext":http://rubygems.org/gems/bson_ext
 * "devise":http://rubygems.org/gems/devise
 
-See an example "Rails 3.1 Gemfile":http://railsapps.github.com/rails-3-1-example-gemfile.html.
+See an example "Rails 3.1.1 Gemfile":http://railsapps.github.com/rails-3-1-1-example-gemfile.html.
 
 See "Managing Rails Versions and Gems":http://railsapps.github.com/managing-rails-versions-gems.html for advice and details.
 
@@ -183,7 +186,7 @@ You'll want to set up a default user so you can easily log in to test the app. Y
 puts 'EMPTY THE MONGODB DATABASE'
 Mongoid.master.collections.reject { |c| c.name =~ /^system/}.each(&:drop)
 puts 'SETTING UP DEFAULT USER LOGIN'
-user = User.create! :name => 'First User', :email => 'user@test.com', :password => 'please', :password_confirmation => 'please'
+user = User.create! :name => 'First User', :email => 'user@example.com', :password => 'please', :password_confirmation => 'please'
 puts 'New user created: ' << user.name
 </pre>
 
@@ -205,7 +208,7 @@ To see your application in action, open a browser window and navigate to "http:/
 
 To sign in as the default user, (unless you've changed it) use
 
-* email: user@test.com
+* email: user@example.com
 * password: please
 
 You should delete or change the pre-configured logins before you deploy your application.
