@@ -1,6 +1,6 @@
 h1. Rails 3.1 + Mongoid + Devise
 
-This is an example application for Rails 3.1.1 that combines Devise with Mongoid. The "Devise":http://github.com/plataformatec/devise gem gives you ready-made authentication and user management. MongoDB is used as a datastore with the "Mongoid":http://mongoid.org/  gem for quick development without schemas or migrations.
+This is an example application for Rails 3.1.2 that combines Devise with Mongoid. The "Devise":http://github.com/plataformatec/devise gem gives you ready-made authentication and user management. MongoDB is used as a datastore with the "Mongoid":http://mongoid.org/  gem for quick development without schemas or migrations.
 
 Best of all, there's a "detailed tutorial":http://github.com/RailsApps/rails3-mongoid-devise/wiki/Tutorial (walk-through) to show how it's built.
 
@@ -43,7 +43,7 @@ Before running this app, you will need:
 
 * The Ruby language (version 1.9.2)
 ** @$ ruby -v@
-* Rails 3.1.1
+* Rails 3.1
 ** @$ rails -v@
 * Rake 0.9.2
 ** @$ rake --version@
@@ -83,9 +83,7 @@ Use the command:
 
 @$ rails new myapp -m https://github.com/RailsApps/rails3-application-templates/raw/master/rails3-mongoid-devise-template.rb -T -O@
 
-Use the @-T -O@ flags to skip Test::Unit files and Active Record files. Add the @-J@ flag to skip Prototype files for Rails 3.0 (not needed for Rails 3.1).
-
-bq. You MUST be using Rails 3.0.4 or newer. Generating a Rails application from an “HTTPS” URL does not work in Rails 3.0.3 and earlier versions.
+Use the @-T -O@ flags to skip Test::Unit files and Active Record files.
 
 This creates a new Rails app (with the name @myapp@) on your computer.
 
@@ -100,12 +98,14 @@ The application generator template will ask you for your preferences:
 * Would you like to use Guard to automate your workflow?
 * Would you like to use Mongoid to connect to a MongoDB database?
 * Would you like to use Devise for authentication?
-* Would you like to install HTML5 Boilerplate?
-* Normalize CSS and use Skeleton boilerplate?
-* Normalize CSS for consistent styling across browsers?
-* Completely reset all CSS to eliminate styling?
 * Would you like to set a robots.txt file to ban spiders?
-* Would you like to use ‘rails-footnotes’ during development?
+* Would you like to use 'rails-footnotes' during development?
+* Which front-end framework would you like for HTML5 and CSS3?
+## None
+## Zurb Foundation
+## Twitter Bootstrap
+## Skeleton
+## Normalize CSS for consistent styling
 
 h4. Use "Recipes" to Customize an Application Template
 
@@ -131,7 +131,7 @@ The application uses the following gems:
 * "bson_ext":http://rubygems.org/gems/bson_ext
 * "devise":http://rubygems.org/gems/devise
 
-See an example "Rails 3.1.1 Gemfile":http://railsapps.github.com/rails-3-1-1-example-gemfile.html.
+See an example "Rails 3.1.2 Gemfile":http://railsapps.github.com/rails-3-1-1-example-gemfile.html.
 
 See "Managing Rails Versions and Gems":http://railsapps.github.com/managing-rails-versions-gems.html for advice and details.
 
