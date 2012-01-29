@@ -1,6 +1,6 @@
-h1. Rails 3.1 + Mongoid + Devise
+h1. Rails 3.2 Mongoid Devise
 
-This is an example application for Rails 3.1.x that combines Devise with Mongoid. The "Devise":http://github.com/plataformatec/devise gem gives you ready-made authentication and user management. MongoDB is used as a datastore with the "Mongoid":http://mongoid.org/  gem for quick development without schemas or migrations.
+This is an example application for Rails 3.2 that combines Devise with Mongoid. The "Devise":http://github.com/plataformatec/devise gem gives you ready-made authentication and user management. MongoDB is used as a datastore with the "Mongoid":http://mongoid.org/  gem for quick development without schemas or migrations.
 
 Best of all, there's a "detailed tutorial":http://github.com/RailsApps/rails3-mongoid-devise/wiki/Tutorial (walk-through) to show how it's built.
 
@@ -8,11 +8,9 @@ You can clone this app or generate a new Rails application using this app as a t
 
 Any issues? Please create a "GitHub issue":http://github.com/RailsApps/rails3-mongoid-devise/issues.
 
-h2. !http://twitter-badges.s3.amazonaws.com/t_logo-a.png(Follow on Twitter)!:http://www.twitter.com/rails_apps Follow on Twitter !http://railsapps.github.com/images/mailing-list-icon.jpg(Join the Mailing List)!:http://eepurl.com/dQx3o Join the Mailing List
+h2. !http://twitter-badges.s3.amazonaws.com/t_logo-a.png(Follow on Twitter)!:http://www.twitter.com/rails_apps Follow on Twitter
 
 Follow the project on Twitter: "@rails_apps":http://twitter.com/rails_apps. Please tweet some praise if you like what you've found.
-
-<a href="http://eepurl.com/dQx3o">Join the email list</a> (low volume, announcements only) for project updates and my tips about Rails resources.
 
 h2. !http://railsapps.github.com/images/rails-36x36.jpg(Tutorial)! Tutorial
 
@@ -41,17 +39,11 @@ h2. Dependencies
 
 Before running this app, you will need:
 
-* The Ruby language (version 1.9.2)
-** @$ ruby -v@
-* Rails 3.1
-** @$ rails -v@
-* Rake 0.9.2
-** @$ rake --version@
+* The Ruby language (version 1.9.3)
+* Rails 3.2
 * A working installation of "MongoDB":http://www.mongodb.org/ (version 1.6.0 or newer)
 
-You must update the standard Ruby installation from Rake 0.8.7 to Rake 0.9.2 before using the application templates to generate a new Rails app.
-
-See "Installing Rails 3.1":http://railsapps.github.com/installing-rails-3-1.html and "Managing Rails Versions and Gems":http://railsapps.github.com/managing-rails-versions-gems.html for detailed instructions and advice.
+See "Installing Rails 3.2":http://railsapps.github.com/installing-rails.html for detailed instructions and advice.
 
 h4. Installing MongoDB
 
@@ -89,8 +81,6 @@ This creates a new Rails app (with the name @myapp@) on your computer.
 
 The application generator template will ask you for your preferences:
 
-* Would you like to use jQuery?
-* Would you like to use jQuery UI?
 * Would you like to use Haml instead of ERB?
 * Would you like to use RSpec instead of TestUnit?
 * Would you like to use factory_girl for test fixtures with RSpec?
@@ -130,10 +120,6 @@ The application uses the following gems:
 * "mongoid":http://rubygems.org/gems/mongoid
 * "bson_ext":http://rubygems.org/gems/bson_ext
 * "devise":http://rubygems.org/gems/devise
-
-See an example "Rails 3.1.3 Gemfile":http://railsapps.github.com/rails-3-1-3-example-gemfile.html.
-
-See "Managing Rails Versions and Gems":http://railsapps.github.com/managing-rails-versions-gems.html for advice and details.
 
 h4. Install the Required Gems
 
@@ -246,6 +232,12 @@ For a Devise introduction, Ryan Bates offers a "Railscast on Devise":http://rail
 h4. Issues
 
 Please create an "issue on GitHub":http://github.com/RailsApps/rails3-mongoid-devise/issues if you identify any problems or have suggestions for improvements.
+
+h4. Where to Get Help
+
+Your best source for help with problems is "Stack Overflow":http://stackoverflow.com/questions/tagged/ruby-on-rails-3. Your issue may have been encountered and addressed by others.
+
+You can also try "Rails Hotline":http://www.railshotline.com/, a free telephone hotline for Rails help staffed by volunteers.
 
 h2. Contributing
 
