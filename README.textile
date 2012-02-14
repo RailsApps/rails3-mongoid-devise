@@ -63,7 +63,9 @@ h4. Downloading the Code
 
 If you simply wish to examine the example code, you can download the code ("clone the repository") with the command
 
-@$ git clone git://github.com/RailsApps/rails3-mongoid-devise.git@
+<pre>
+$ git clone git://github.com/RailsApps/rails3-mongoid-devise.git
+</pre>
 
 The source code is managed with Git (a version control system). You'll need Git on your machine (install it from "http://git-scm.com/":http://git-scm.com/).
 
@@ -73,7 +75,9 @@ You can use an application template to generate a new version of the example app
 
 Use the command:
 
-@$ rails new myapp -m https://github.com/RailsApps/rails3-application-templates/raw/master/rails3-mongoid-devise-template.rb -T -O@
+<pre>
+$ rails new myapp -m https://github.com/RailsApps/rails3-application-templates/raw/master/rails3-mongoid-devise-template.rb -T -O
+</pre>
 
 Use the @-T -O@ flags to skip Test::Unit files and Active Record files.
 
