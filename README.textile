@@ -2,7 +2,7 @@ h1. Rails 3.2 Mongoid Devise
 
 This is an example application for Rails 3.2 that combines Devise with Mongoid. The "Devise":http://github.com/plataformatec/devise gem gives you ready-made authentication and user management. MongoDB is used as a datastore with the "Mongoid":http://mongoid.org/  gem for quick development without schemas or migrations.
 
-Best of all, there's a "detailed tutorial":http://github.com/RailsApps/rails3-mongoid-devise/wiki/Tutorial (walk-through) to show how it's built.
+Best of all, there's a "detailed tutorial":http://railsapps.github.com/tutorial-rails-mongoid-devise.html to show how it's built.
 
 You can clone this app or generate a new Rails application using this app as a template.
 
@@ -16,9 +16,9 @@ h2. !http://railsapps.github.com/images/rails-36x36.jpg(Tutorial)! Tutorial
 
 A complete walkthrough tutorial is available on the GitHub wiki:
 
-h4. "View the Tutorial":http://github.com/RailsApps/rails3-mongoid-devise/wiki/Tutorial
+h4. "View the Tutorial":http://railsapps.github.com/tutorial-rails-mongoid-devise.html
 
-The tutorial documents each step to follow to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere. See a list of "recommended books and online resources for learning Rails":http://railsapps.github.com/best-recommended-learning-rails-books-resources.html.
+The tutorial documents each step to follow to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere. See a list of recommended resources for "Rails":http://railsapps.github.com/rails.html.
 
 If you simply wish to modify the application for your own project, you can download the application and set it up as described below, without following the tutorial.
 
@@ -103,7 +103,7 @@ The application generator template will ask you for your preferences:
 
 h4. Use "Recipes" to Customize an Application Template
 
-The "tutorial":http://github.com/RailsApps/rails3-mongoid-devise/wiki/Tutorial shows how a customized application template can be assembled from "recipes." The application template was created using the "Rails Apps Composer":https://github.com/RailsApps/rails_apps_composer gem which provides a convenient way to assemble a reusable application template by selecting various "recipes" for popular Rails development packages.
+The "tutorial":http://railsapps.github.com/tutorial-rails-mongoid-devise.html shows how a customized application template can be assembled from "recipes." The application template was created using the "Rails Apps Composer":https://github.com/RailsApps/rails_apps_composer gem which provides a convenient way to assemble a reusable application template by selecting various "recipes" for popular Rails development packages.
 
 h4. Please Remember: Edit the README
 
@@ -227,7 +227,7 @@ Run @rake cucumber@ (or more simply, @cucumber@) to run all Cucumber scenarios a
 
 h2. Documentation and Support
 
-See the "Tutorial":http://github.com/RailsApps/rails3-mongoid-devise/wiki/Tutorial for this app for details of how it was built. Please create an "Issue":http://github.com/RailsApps/rails3-mongoid-devise/issues on GitHub if you identify any problems or have suggestions for improvements.
+See the "Tutorial":http://railsapps.github.com/tutorial-rails-mongoid-devise.html for this app for details of how it was built. Please create an "Issue":http://github.com/RailsApps/rails3-mongoid-devise/issues on GitHub if you identify any problems or have suggestions for improvements.
 
 For a Mongoid introduction, Ryan Bates offers a "Railscast on Mongoid":http://railscasts.com/episodes/238-mongoid. You can find documentation for "Mongoid":http://mongoid.org/ at "http://mongoid.org/":http://mongoid.org/ There is an active "Mongoid mailing list":http://groups.google.com/group/mongoid and you can submit "Mongoid issues":http://github.com/durran/mongoid/issues at GitHub.
 
