@@ -1,10 +1,10 @@
 development:
   host: localhost
-  database: testapp_development
+  database: rails3_mongoid_devise_development
 
 test:
   host: localhost
-  database: testapp_test
+  database: rails3_mongoid_devise_test
 
 # set these environment variables on your prod server
 production:
