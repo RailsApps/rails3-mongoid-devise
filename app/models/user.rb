@@ -7,6 +7,19 @@ class User
 
   ## Database authenticatable
   field :email,              :type => String, :null => false, :default => ""
+
+  # devise uses the email field to find the user on login, so it needs
+  # to be indexed to avoid potentially scanning the entire collection.
+  #
+  # the unique option will prevent duplicate email addresses from being
+  # entered at the database level.
+  #
+  # note that to create this and any other indexes, you need to run
+  #
+  #     rake db:mongoid:create_indexes
+  #
+  index :email,              :unique => true
+
   field :encrypted_password, :type => String, :null => false, :default => ""
 
   ## Recoverable
@@ -41,7 +54,6 @@ class User
   # field :authentication_token, :type => String
   field :name
   validates_presence_of :name
-  validates_uniqueness_of :name, :email, :case_sensitive => false
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 end
 
