@@ -41,7 +41,6 @@ class User
   # field :authentication_token, :type => String
   field :name
   validates_presence_of :name
-  validates_uniqueness_of :name, :email, :case_sensitive => false
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 end
 
