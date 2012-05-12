@@ -1,20 +1,19 @@
-h1. Rails Application for Devise with Mongoid
+h1. !http://railsapps.github.com/images/rails-36x36.jpg(Rails Application for Devise with Mongoid)! Rails App for Devise with Mongoid
 
 Rails 3.2 example application shows how to use Devise with Mongoid.
 
-"Devise":http://github.com/plataformatec/devise gives you ready-made authentication and user management. MongoDB is used as a datastore with the "Mongoid":http://mongoid.org/  gem for quick development without schemas or migrations.
+* "Devise":http://github.com/plataformatec/devise gives you ready-made authentication and user management.
+* MongoDB is used as a datastore with the "Mongoid":http://mongoid.org/  gem for quick development without schemas or migrations.
 
 Best of all, there's a "detailed tutorial":http://railsapps.github.com/tutorial-rails-mongoid-devise.html to show how it's built.
 
-You can clone this app or generate a new Rails application using this app as a template.
-
-Any issues? Please create a "GitHub issue":http://github.com/RailsApps/rails3-mongoid-devise/issues.
+You can clone this app or generate a new Rails application using an "application template":https://github.com/RailsApps/rails3-application-templates.
 
 h2. !http://twitter-badges.s3.amazonaws.com/t_logo-a.png(Follow on Twitter)!:http://www.twitter.com/rails_apps Follow on Twitter
 
 Follow the project on Twitter: "@rails_apps":http://twitter.com/rails_apps. Please tweet some praise if you like what you've found.
 
-h2. !http://railsapps.github.com/images/rails-36x36.jpg(Tutorial)! Tutorial
+h2. Tutorial
 
 A complete walkthrough tutorial is available on the GitHub wiki:
 
@@ -28,14 +27,14 @@ h2. What Is Implemented -- and What Is Not
 
 This is a demonstration application that allows you to visit a home page and see a list of users. With the default user's email and password (supplied below), you can log in and view details for each user. You can customize this app as you need.
 
-h4. Similar Examples and Tutorials
+h4. RailsApps Examples and Tutorials
+
+This is one in a series of Rails example apps and tutorials from the "RailsApps Project":http://railsapps.github.com/. See a list of additional "Rails examples, tutorials, and starter apps":http://railsapps.github.com/rails-examples-tutorials.html.
 
 |_. Author |_. Example App |_. Comments |
 | Plataformatec | "Devise":http://github.com/plataformatec/devise_example | Simple example using SQLite |
 | Daniel Kehoe | "Devise, RSpec, Cucumber":https://github.com/RailsApps/rails3-devise-rspec-cucumber | Detailed tutorial, app template, starter app, using SQLite |
 | Daniel Kehoe | "OmniAuth, Mongoid":https://github.com/RailsApps/rails3-mongoid-omniauth | Detailed tutorial, app template, starter app, using MongoDB |
-
-See a list of additional "Rails examples, tutorials, and starter apps":http://railsapps.github.com/rails-examples-tutorials.html.
 
 h2. Dependencies
 
@@ -61,7 +60,15 @@ h2. Getting the Application
 
 You have several options for getting the code.
 
-h4. Downloading the Code
+h4. Fork, Clone, or Generate?
+
+_Fork:_ If you'd like to add features (or bug fixes) to improve the example application, you can fork the GitHub repo and "make pull requests":http://help.github.com/send-pull-requests/. Your code contributions are welcome!
+
+_Clone:_ If you want to copy and customize the app with changes that are only useful for your own project, you can clone the GitHub repo. You'll need to search-and-replace the project name throughout the application. You probably should generate the app instead (see below).
+
+_Generate:_ If you want to use the project as a starter app for your customized application, use the application template to generate a new version of the example app. You'll be able to give it your own project name when you generate the app. Generating the application (described below) gives you many options.
+
+h4. Clone the Repository
 
 If you simply wish to examine the example code, you can download the code ("clone the repository") with the command
 
@@ -75,7 +82,7 @@ h4. Using the Ready-Made Application Template
 
 You can use an application template to generate a new version of the example app. You’ll find an application template for this app in the "Rails Application Templates":https://github.com/RailsApps/rails3-application-templates repository.
 
-Use the command:
+To build the "rails3-mongoid-devise" example application, run the command:
 
 <pre>
 $ rails new myapp -m https://github.com/RailsApps/rails3-application-templates/raw/master/rails3-mongoid-devise-template.rb -T -O
@@ -83,25 +90,45 @@ $ rails new myapp -m https://github.com/RailsApps/rails3-application-templates/r
 
 Use the @-T -O@ flags to skip Test::Unit files and Active Record files.
 
+The @$@ character indicates a shell prompt; don't include it when you run the command.
+
 This creates a new Rails app (with the name @myapp@) on your computer.
 
-The application generator template will ask you for your preferences:
+The application generator templates will ask you for various preferences.
 
-* Would you like to use Haml instead of ERB?
-* Would you like to use RSpec instead of TestUnit?
-* Would you like to use factory_girl for test fixtures with RSpec?
-* Would you like to use Cucumber for your BDD?
-* Would you like to use Guard to automate your workflow?
-* Would you like to use Mongoid to connect to a MongoDB database?
-* Would you like to use Devise for authentication?
-* Would you like to set a robots.txt file to ban spiders?
-* Would you like to use 'rails-footnotes' during development?
-* Which front-end framework would you like for HTML5 and CSS3?
+To reproduce the example application exactly as found in the repository, make the following selections:
+
+* Would you like to use "Haml":http://en.wikipedia.org/wiki/Haml instead of ERB? *no*
+* Would you like to use "RSpec":http://rspec.info/ instead of TestUnit? *yes*
+* Would you like to use "factory_girl":https://github.com/thoughtbot/factory_girl for test fixtures with RSpec? *yes*
+* Would you like to use "machinist":https://github.com/notahat/machinist for test fixtures with RSpec? *no*
+* Would you like to use "Cucumber":http://cukes.info/ for your BDD? *yes*
+* Would you like to use "Guard":http://intridea.com/posts/hire-a-guard-for-your-project to automate your workflow? *no*
+* Would you like to use Mongoid to connect to a MongoDB database? *yes* 
+* Would you like the app to use a Gmail account to send email? *yes*
+* Would you like to use "Devise":http://github.com/plataformatec/devise for authentication? *#2*
+## No
+## Devise with default modules
+## Devise with Confirmable module
+## Devise with Confirmable and Invitable modules
+* Would you like to manage authorization with "CanCan":https://github.com/ryanb/cancan & "Rolify":https://github.com/EppO/rolify? *no*
+* Which front-end framework would you like for HTML5 and CSS3? *#1*
 ## None
-## Zurb Foundation
-## Twitter Bootstrap
-## Skeleton
+## "Zurb Foundation":http://foundation.zurb.com/
+## "Twitter Bootstrap":http://twitter.github.com/bootstrap/ (less)
+## "Twitter Bootstrap":http://twitter.github.com/bootstrap/ (sass)
+## "Skeleton":http://www.getskeleton.com/
 ## Normalize CSS for consistent styling
+* Which form gem would you like? *#1*
+## None
+## simple form
+## simple form (bootstrap)
+* Would you like to use "rails-footnotes":https://github.com/josevalim/rails-footnotes during development? *no*
+* Would you like to set a robots.txt file to ban spiders? *yes*
+* Would you like to add 'will_paginate' for pagination? *no*
+* Add 'therubyracer' JavaScript runtime (for Linux users without node.js)? *no*
+
+You can choose other selections if you don’t care about matching the example application exactly.
 
 h4. Use "Recipes" to Customize an Application Template
 
@@ -139,7 +166,7 @@ You can check which gems are installed on your computer with:
 
 Keep in mind that you have installed these gems locally. When you deploy the app to another server, the same gems (and versions) must be available.
 
-h4. Configure Mongoid
+h2. Configure Mongoid
 
 Mongoid provides access to the MongoDB database from Rails.
 
@@ -147,26 +174,60 @@ You can use the default configuration found in the file *config/mongoid.yml*.
 
 If you want to see what's in your MongoDB databases, I recommend using the "MongoHub":http://mongohub.todayclose.com/ app (for Mac OS X).
 
-h4. Set Up Configuration for Devise
+h2. Configure Email
 
-This app uses Devise for user management and authentication. Devise is at "http://github.com/plataformatec/devise":http://github.com/plataformatec/devise.
+You must configure the app for your email account if you want your application to send email messages, for example, if you've generated the application with the option to install the Devise @:confirmable@ module. 
+
+h4. Use a Gmail account
+
+If you've generated the application with the option to use a Gmail account to send email, you'll need to modify the files *config/environments/development.rb* and *config/environments/production.rb* to include your Gmail username and password.
+
+<pre>
+config.action_mailer.smtp_settings = {
+  address: "smtp.gmail.com",
+  port: 587,
+  domain: "example.com",
+  authentication: "plain",
+  enable_starttls_auto: true,
+  user_name: ENV["GMAIL_USERNAME"],
+  password: ENV["GMAIL_PASSWORD"]
+}
+</pre>
+
+You can replace @ENV["GMAIL_USERNAME"]@ and @ENV["GMAIL_PASSWORD"]@ with your Gmail username and password. However, committing the file to a public GitHub repository will expose your secret password.
+
+If you're familiar with setting "Unix environment variables":http://en.wikipedia.org/wiki/Environment_variable, it's advisable to leave @config.action_mailer.smtp_settings@ unchanged and set your environment variables in the file that is read when starting an interactive shell (the *~/.bashrc* file for the bash shell). This will keep the password out of your repository.
+
+Are you using a bash shell? Use @echo $SHELL@ to find out. For a bash shell, edit the *~/.bashrc* file and add:
+
+<pre>
+export GMAIL_USERNAME="myname@gmail.com"
+export GMAIL_PASSWORD="secret*"
+</pre>
+
+Open a new shell or restart your terminal application to continue.
+
+h4. Configure ActionMailer
+
+The example application is set to deliver email in both development and production. It will raise delivery errors in development but not production. 
+
+In development, @config.action_mailer.default_url_options@ is set for a host at @localhost:3000@ which will enable links in Devise confirmation email messages to work properly. You'll need to change the @config.action_mailer.default_url_options@ host option from @example.com@ to your own domain for the production environment.
+
+You can change these values as needed in the *config/environments/development.rb* and *config/environments/production.rb* files.
+
+h4. Configure Devise for Email
+
+Complete your email configuration by modifying
+
+*config/initializers/devise.rb*
+
+and setting the @config.mailer_sender@ option for the return email address for messages that Devise sends from the application.
+
+h2. Configure Devise
 
 You can modify the configuration file for Devise if you want to use something other than the defaults:
 
 *config/initializers/devise.rb*
-
-h4. Configure Email for Devise
-
-Configure email by modifying
-
-*config/initializers/devise.rb*
-
-and setting the return email address for emails sent from the application.
-
-You may need to set values for your mailhost in
-
-*config/environments/development.rb*
-*config/environments/production.rb*
 
 h2. Create a Default User
 
@@ -180,15 +241,25 @@ Mongoid.master.collections.reject { |c| c.name =~ /^system/}.each(&:drop)
 puts 'SETTING UP DEFAULT USER LOGIN'
 user = User.create! :name => 'First User', :email => 'user@example.com', :password => 'please', :password_confirmation => 'please'
 puts 'New user created: ' << user.name
+user2 = User.create! :name => 'Second User', :email => 'user2@example.com', :password => 'please', :password_confirmation => 'please'
+puts 'New user created: ' << user2.name
 </pre>
 
 Use the defaults or change the values for name, email, and password as you wish.
 
-h4. Seed the Database
+h4. Set the Database
 
-Add the default user to the MongoDB database by running the command:
+Prepare the database and add the default user to the database by running the commands:
 
-@$ rake db:seed@
+<pre>
+$ bundle exec rake db:seed
+</pre>
+
+Set the database for running tests:
+
+<pre>
+$ bundle exec rake db:test:prepare
+</pre>
 
 h4. Test the App
 
