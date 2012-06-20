@@ -82,6 +82,8 @@ h4. Using the Ready-Made Application Template
 
 You can use an application template to generate a new version of the example app. You’ll find an application template for this app in the "Rails Application Templates":https://github.com/RailsApps/rails3-application-templates repository.
 
+MongoDB must be installed and running on your computer before you use the application template to generate the app.
+
 To build the "rails3-mongoid-devise" example application, run the command:
 
 <pre>
