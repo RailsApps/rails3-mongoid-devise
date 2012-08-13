@@ -7,7 +7,7 @@ Rails 3.2 example application shows how to use Devise with Mongoid.
 
 Best of all, there's a "detailed tutorial":http://railsapps.github.com/tutorial-rails-mongoid-devise.html to show how it's built.
 
-You can clone this app or generate a new Rails application using an "application template":https://github.com/RailsApps/rails3-application-templates.
+You can build this application in only a few minutes using the "Rails Composer":http://railsapps.github.com/rails-composer/ tool.
 
 h2. !http://twitter-badges.s3.amazonaws.com/t_logo-a.png(Follow on Twitter)!:http://www.twitter.com/rails_apps Follow on Twitter
 
@@ -15,36 +15,37 @@ Follow the project on Twitter: "@rails_apps":http://twitter.com/rails_apps. Plea
 
 h2. Tutorial
 
-A complete walkthrough tutorial is available on the GitHub wiki:
+A complete tutorial is available:
 
 h4. "View the Tutorial":http://railsapps.github.com/tutorial-rails-mongoid-devise.html
 
 The tutorial documents each step to follow to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere. See a list of recommended resources for "Rails":http://railsapps.github.com/rails.html.
 
-If you simply wish to modify the application for your own project, you can download the application and set it up as described below, without following the tutorial.
-
 h2. What Is Implemented -- and What Is Not
 
 This is a demonstration application that allows you to visit a home page and see a list of users. With the default user's email and password (supplied below), you can log in and view details for each user. You can customize this app as you need.
 
-h4. RailsApps Examples and Tutorials
+The @rake db:seed@ command sets up a database with two example users. The first user is designated as an administrator and can view a administrative page when logged in. The second user is restricted from accessing the administrative page.
+
+h4. Similar Examples and Tutorials
 
 This is one in a series of Rails example apps and tutorials from the "RailsApps Project":http://railsapps.github.com/. See a list of additional "Rails examples, tutorials, and starter apps":http://railsapps.github.com/rails-examples-tutorials.html.
 
-|_. Author |_. Example App |_. Comments |
-| Plataformatec | "Devise":http://github.com/plataformatec/devise_example | Simple example using SQLite |
-| Daniel Kehoe | "Devise, RSpec, Cucumber":https://github.com/RailsApps/rails3-devise-rspec-cucumber | Detailed tutorial, app template, starter app, using SQLite |
-| Daniel Kehoe | "OmniAuth, Mongoid":https://github.com/RailsApps/rails3-mongoid-omniauth | Detailed tutorial, app template, starter app, using MongoDB |
+This example application uses the Mongoid ORM with the MongoDB datastore. You can use ActiveRecord and a SQLite database instead. The "rails3-devise-rspec-cucumber":https://github.com/RailsApps/rails3-devise-rspec-cucumber example app and tutorial shows how to set up Devise with ActiveRecord and SQLite.
+
+For an extended version of this example that adds "CanCan":https://github.com/ryanb/cancan for authorization (controlling access to administrative pages) and "Twitter Bootstrap":http://twitter.github.com/bootstrap/ (for CSS styling) see the "rails3-bootstrap-devise-cancan":https://github.com/RailsApps/rails3-bootstrap-devise-cancan example application.
+
+The "rails-prelaunch-signup":https://github.com/RailsApps/rails-prelaunch-signup example and tutorial from the RailsApps project is also similar to this example application.
 
 h2. Dependencies
 
-Before running this app, you will need:
+Before generating your application, you will need:
 
 * The Ruby language (version 1.9.3)
 * Rails 3.2
 * A working installation of "MongoDB":http://www.mongodb.org/ (version 1.6.0 or newer)
 
-See "Installing Rails 3.2":http://railsapps.github.com/installing-rails.html for detailed instructions and advice.
+See the article "Installing Rails":http://railsapps.github.com/installing-rails.html for advice about updating Rails and your development environment.
 
 h4. Installing MongoDB
 
@@ -60,115 +61,65 @@ h2. Getting the Application
 
 You have several options for getting the code.
 
-h4. Fork, Clone, or Generate?
+h3. Fork
 
-_Fork:_ If you'd like to add features (or bug fixes) to improve the example application, you can fork the GitHub repo and "make pull requests":http://help.github.com/send-pull-requests/. Your code contributions are welcome!
+If you'd like to add features (or bug fixes) to improve the example application, you can fork the GitHub repo and "make pull requests":http://help.github.com/send-pull-requests/. Your code contributions are welcome!
 
-_Clone:_ If you want to copy and customize the app with changes that are only useful for your own project, you can clone the GitHub repo. You'll need to search-and-replace the project name throughout the application. You probably should generate the app instead (see below).
+h3. Clone
 
-_Generate:_ If you want to use the project as a starter app for your customized application, use the application template to generate a new version of the example app. You'll be able to give it your own project name when you generate the app. Generating the application (described below) gives you many options.
-
-h4. Clone the Repository
-
-If you simply wish to examine the example code, you can download the code ("clone the repository") with the command
+If you want to copy and customize the app with changes that are only useful for your own project, you can clone the GitHub repo. You'll need to search-and-replace the project name throughout the application. You probably should generate the app instead (see below). To clone:
 
 <pre>
 $ git clone git://github.com/RailsApps/rails3-mongoid-devise.git
 </pre>
+  
+You'll need "git":http://git-scm.com/ on your machine. See "Rails and Git":http://railsapps.github.com/rails-git.html.
 
-The source code is managed with Git (a version control system). You'll need Git on your machine (install it from "http://git-scm.com/":http://git-scm.com/).
+h3. Generate
 
-h4. Using the Ready-Made Application Template
+If you want to use the project as a starter app, use the "Rails Composer":http://railsapps.github.com/rails-composer/ tool to generate a new version of the example app. You'll be able to give it your own project name when you generate the app. Generating the application gives you many additional options.
 
-You can use an application template to generate a new version of the example app. You’ll find an application template for this app in the "Rails Application Templates":https://github.com/RailsApps/rails3-application-templates repository.
-
-MongoDB must be installed and running on your computer before you use the application template to generate the app.
-
-To build the "rails3-mongoid-devise" example application, run the command:
+To build the example application, run the command:
 
 <pre>
-$ rails new myapp -m https://github.com/RailsApps/rails3-application-templates/raw/master/rails3-mongoid-devise-template.rb -T -O
+$ rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T
 </pre>
 
 Use the @-T -O@ flags to skip Test::Unit files and Active Record files.
 
 The @$@ character indicates a shell prompt; don't include it when you run the command.
 
-This creates a new Rails app (with the name @myapp@) on your computer.
+This creates a new Rails app (with the name "myapp") on your computer.
 
-The application generator templates will ask you for various preferences.
+h3. Edit the README
 
-To reproduce the example application exactly as found in the repository, make the following selections:
-
-* Would you like to use "Haml":http://en.wikipedia.org/wiki/Haml instead of ERB? *no*
-* Would you like to use "RSpec":http://rspec.info/ instead of TestUnit? *yes*
-* Would you like to use "factory_girl":https://github.com/thoughtbot/factory_girl for test fixtures with RSpec? *yes*
-* Would you like to use "machinist":https://github.com/notahat/machinist for test fixtures with RSpec? *no*
-* Would you like to use "Cucumber":http://cukes.info/ for your BDD? *yes*
-* Would you like to use "Guard":http://intridea.com/posts/hire-a-guard-for-your-project to automate your workflow? *no*
-* Would you like to use Mongoid to connect to a MongoDB database? *yes* 
-* Would you like the app to use a Gmail account to send email? *yes*
-* Would you like to use "Devise":http://github.com/plataformatec/devise for authentication? *#2*
-## No
-## Devise with default modules
-## Devise with Confirmable module
-## Devise with Confirmable and Invitable modules
-* Would you like to manage authorization with "CanCan":https://github.com/ryanb/cancan & "Rolify":https://github.com/EppO/rolify? *no*
-* Which front-end framework would you like for HTML5 and CSS3? *#1*
-## None
-## "Zurb Foundation":http://foundation.zurb.com/
-## "Twitter Bootstrap":http://twitter.github.com/bootstrap/ (less)
-## "Twitter Bootstrap":http://twitter.github.com/bootstrap/ (sass)
-## "Skeleton":http://www.getskeleton.com/
-## Normalize CSS for consistent styling
-* Which form gem would you like? *#1*
-## None
-## simple form
-## simple form (bootstrap)
-* Would you like to use "rails-footnotes":https://github.com/josevalim/rails-footnotes during development? *no*
-* Would you like to set a robots.txt file to ban spiders? *yes*
-* Would you like to add 'will_paginate' for pagination? *no*
-* Add 'therubyracer' JavaScript runtime (for Linux users without node.js)? *no*
-
-You can choose other selections if you don’t care about matching the example application exactly.
-
-h4. Use "Recipes" to Customize an Application Template
-
-The "tutorial":http://railsapps.github.com/tutorial-rails-mongoid-devise.html shows how a customized application template can be assembled from "recipes." The application template was created using the "Rails Apps Composer":https://github.com/RailsApps/rails_apps_composer gem which provides a convenient way to assemble a reusable application template by selecting various "recipes" for popular Rails development packages.
-
-h4. Please Remember: Edit the README
-
-If you're open sourcing the app on GitHub, please edit the README file to add a description of the app and your contact info. Changing the README is important if you're using a clone of the example app. I've been mistaken (and contacted) as the author of apps that are copied from my example.
+If you're storing the app in a GitHub repository, please edit the README files to add a description of the app and your contact info. If you don't change the README, people will think I am the author of your version of the application.
 
 h2. Getting Started
 
-h4. About Required Gems
+h3. Install the Required Gems
 
-The application uses the following gems:
+Check the Gemfile to see which gems are used by this application.
 
-* "rails":http://rubygems.org/gems/rails
-* "rspec-rails":http://rubygems.org/gems/rspec-rails
-* "database_cleaner":http://rubygems.org/gems/database_cleaner
-* "factory_girl_rails":http://rubygems.org/gems/factory_girl_rails
-* "cucumber-rails":http://rubygems.org/gems/cucumber-rails
-* "capybara":http://rubygems.org/gems/capybara
-* "mongoid":http://rubygems.org/gems/mongoid
-* "bson_ext":http://rubygems.org/gems/bson_ext
-* "devise":http://rubygems.org/gems/devise
+If you used the "Rails Composer":http://railsapps.github.com/rails-composer/ tool to generate the example app, the application template script has already run the @bundle install@ command.
 
-h4. Install the Required Gems
+If not, you should run the @bundle install@ command to install the required gems on your computer:
 
-Install the required gems on your computer:
-
-@$ bundle install@
+<pre>
+$ bundle install
+</pre>
 
 You can check which gems are installed on your computer with:
 
-@$ gem list --local@
+<pre>
+$ gem list
+</pre>
 
 Keep in mind that you have installed these gems locally. When you deploy the app to another server, the same gems (and versions) must be available.
 
-h2. Configure Mongoid
+I recommend using "rvm":https://rvm.io/, the Ruby Version Manager, to create a project-specific gemset for the application. See the article "Installing Rails":http://railsapps.github.com/installing-rails.html.
+
+h3. Configure Mongoid
 
 Mongoid provides access to the MongoDB database from Rails.
 
@@ -176,13 +127,16 @@ You can use the default configuration found in the file *config/mongoid.yml*.
 
 If you want to see what's in your MongoDB databases, I recommend using the "MongoHub":http://mongohub.todayclose.com/ app (for Mac OS X).
 
-h2. Configure Email
+h3. Configure Email
 
-You must configure the app for your email account if you want your application to send email messages, for example, if you've generated the application with the option to install the Devise @:confirmable@ module. 
+You must configure the app for your email account if you want your application to send email messages. 
 
 h4. Use a Gmail account
 
-If you've generated the application with the option to use a Gmail account to send email, you'll need to modify the files *config/environments/development.rb* and *config/environments/production.rb* to include your Gmail username and password.
+You'll need to modify two files to include your Gmail username and password:
+
+* *config/environments/development.rb*
+* *config/environments/production.rb*
 
 <pre>
 config.action_mailer.smtp_settings = {
@@ -211,17 +165,20 @@ Open a new shell or restart your terminal application to continue.
 
 h4. Configure ActionMailer
 
-The example application is set to deliver email in both development and production. It will raise delivery errors in development but not production. 
+The example application is set to deliver email in production only. It will raise delivery errors in development but not production. 
 
 In development, @config.action_mailer.default_url_options@ is set for a host at @localhost:3000@ which will enable links in Devise confirmation email messages to work properly. You'll need to change the @config.action_mailer.default_url_options@ host option from @example.com@ to your own domain for the production environment.
 
-You can change these values as needed in the *config/environments/development.rb* and *config/environments/production.rb* files.
+You can change these values as needed in these two files:
+
+* *config/environments/development.rb*
+* *config/environments/production.rb*
 
 h4. Configure Devise for Email
 
 Complete your email configuration by modifying
 
-*config/initializers/devise.rb*
+* *config/initializers/devise.rb*
 
 and setting the @config.mailer_sender@ option for the return email address for messages that Devise sends from the application.
 
@@ -229,17 +186,15 @@ h2. Configure Devise
 
 You can modify the configuration file for Devise if you want to use something other than the defaults:
 
-*config/initializers/devise.rb*
+* *config/initializers/devise.rb*
 
 h2. Create a Default User
 
-h4. Set Up a Database Seed File
+h3. Set Up a Database Seed File
 
 You'll want to set up a default user so you can easily log in to test the app. You can modify the file *db/seeds.rb* for your own name, email and password:
 
 <pre>
-puts 'EMPTY THE MONGODB DATABASE'
-Mongoid.master.collections.reject { |c| c.name =~ /^system/}.each(&:drop)
 puts 'SETTING UP DEFAULT USER LOGIN'
 user = User.create! :name => 'First User', :email => 'user@example.com', :password => 'please', :password_confirmation => 'please'
 puts 'New user created: ' << user.name
@@ -249,21 +204,23 @@ puts 'New user created: ' << user2.name
 
 Use the defaults or change the values for name, email, and password as you wish.
 
-h4. Set the Database
+h3. Set the Database
 
 Prepare the database and add the default user to the database by running the commands:
 
 <pre>
-$ bundle exec rake db:seed
+$ rake db:seed
 </pre>
 
 Set the database for running tests:
 
 <pre>
-$ bundle exec rake db:test:prepare
+$ rake db:test:prepare
 </pre>
 
-h4. Test the App
+If you’re not using "rvm":https://rvm.io/, the Ruby Version Manager, you should preface each rake command with @bundle exec@. You don’t need to use @bundle exec@ if you are using rvm version 1.11.0 or newer.
+
+h3. Test the App
 
 You can check that your app runs properly by entering the command
 
@@ -278,6 +235,8 @@ To sign in as the default user, (unless you've changed it) use
 
 You should delete or change the pre-configured logins before you deploy your application.
 
+If you test the app by starting the web server and then leave the server running while you install new gems, you’ll have to restart the server to see any changes. The same is true for changes to configuration files in the config folder. This can be confusing to new Rails developers because you can change files in the app folders without restarting the server. Stop the server each time after testing and you will avoid this issue.
+
 h2. Deploy to Heroku
 
 For your convenience, here are "instructions for deploying your app to Heroku":http://railsapps.github.com/rails-heroku-tutorial.html. Heroku provides low cost, easily configured Rails application hosting.
@@ -290,19 +249,27 @@ This example application and tutorial demonstrates Devise and Mongoid working to
 
 h2. Testing
 
-The application contains RSpec unit tests and Cucumber scenarios and steps. The tests are minimal and can be improved.
-
-Please send the author a message, create an issue, or submit a pull request if you can contribute improved RSpec or Cucumber files.
+The example application contains a suite of RSpec unit tests and Cucumber scenarios and step definitions.
 
 After installing the application, run @rake -T@ to check that rake tasks for RSpec and Cucumber are available.
 
 Run @rake spec@ to run all RSpec tests.
 
-Run @rake cucumber@ (or more simply, @cucumber@) to run all Cucumber scenarios and steps.
+Run @rake cucumber@ (or more simply, @cucumber@) to run all Cucumber scenarios.
+
+Please send the author a message, create an issue, or submit a pull request if you can contribute improved RSpec or Cucumber files.
+
+h2. Troubleshooting
+
+Problems? Check the "issues":https://github.com/RailsApps/rails3-application-templates/issues.
+
+h4. Problems with  "Certificate Verify Failed"
+
+Are you getting an error "OpenSSL certificate verify failed" when you try to generate a new Rails app from an application template? See suggestions to resolve the error "Certificate Verify Failed":http://railsapps.github.com/openssl-certificate-verify-failed.html.
 
 h2. Documentation and Support
 
-See the "Tutorial":http://railsapps.github.com/tutorial-rails-mongoid-devise.html for this app for details of how it was built. Please create an "Issue":http://github.com/RailsApps/rails3-mongoid-devise/issues on GitHub if you identify any problems or have suggestions for improvements.
+The "tutorial":http://railsapps.github.com/tutorial-rails-mongoid-devise.html  provides additional documentation.
 
 For a Mongoid introduction, Ryan Bates offers a "Railscast on Mongoid":http://railscasts.com/episodes/238-mongoid. You can find documentation for "Mongoid":http://mongoid.org/ at "http://mongoid.org/":http://mongoid.org/ There is an active "Mongoid mailing list":http://groups.google.com/group/mongoid and you can submit "Mongoid issues":http://github.com/durran/mongoid/issues at GitHub.
 
@@ -328,10 +295,9 @@ If you add functionality to this application, create an alternative implementati
 
 h2. Credits
 
-Daniel Kehoe ("http://danielkehoe.com/":http://danielkehoe.com/) implemented the application and wrote the tutorial.
+Daniel Kehoe implemented the application and wrote the tutorial.
 
-Is the app useful to you? Follow the project on Twitter:
-"@rails_apps":http://twitter.com/rails_apps
+Is the app useful to you? Follow the project on Twitter: "@rails_apps":http://twitter.com/rails_apps
 and tweet some praise. I'd love to know you were helped out by what I've put together.
 
 h4. Contributors
