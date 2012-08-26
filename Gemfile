@@ -6,7 +6,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 gem 'jquery-rails'
-gem "mongoid", ">= 3.0.3"
+gem "mongoid", ">= 3.0.5"
 gem "rspec-rails", ">= 2.11.0", :group => [:development, :test]
 gem "capybara", ">= 1.1.2", :group => :test
 gem "database_cleaner", ">= 0.8.0", :group => :test
