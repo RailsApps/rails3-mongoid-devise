@@ -2,7 +2,7 @@
 
 def create_visitor
   @visitor ||= { :name => "Testy McUserton", :email => "example@example.com",
-    :password => "please", :password_confirmation => "please" }
+    :password => "changeme", :password_confirmation => "changeme" }
 end
 
 def find_user
@@ -19,7 +19,7 @@ end
 def create_user
   create_visitor
   delete_user
-  @user = FactoryGirl.create(:user, email: @visitor[:email])
+  @user = FactoryGirl.create(:user, @visitor)
 end
 
 def delete_user
@@ -103,7 +103,7 @@ end
 
 When /^I sign up with a mismatched password confirmation$/ do
   create_visitor
-  @visitor = @visitor.merge(:password_confirmation => "please123")
+  @visitor = @visitor.merge(:password_confirmation => "changeme123")
   sign_up
 end
 
