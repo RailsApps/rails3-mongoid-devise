@@ -266,7 +266,6 @@ h3. Set the Database
 Prepare the database and add the default user to the database by running the commands:
 
 <pre>
-$ rake db:migrate
 $ rake db:seed
 </pre>
 
