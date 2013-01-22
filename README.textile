@@ -309,7 +309,7 @@ To see your application in action, open a browser window and navigate to "http:/
 To sign in as the default user, (unless you've changed it) use
 
 * email: user@example.com
-* password: please
+* password: changeme
 
 You should delete or change the pre-configured logins before you deploy your application.
 
