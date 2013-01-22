@@ -223,11 +223,11 @@ Modify the file *config/application.yml*:
 # makes 'Your_Gmail_Username' available as ENV["GMAIL_USERNAME"]
 # Add application configuration variables here, as shown below.
 #
+GMAIL_USERNAME: Your_Username
+GMAIL_PASSWORD: Your_Password
 ADMIN_NAME: First User
 ADMIN_EMAIL: user@example.com
 ADMIN_PASSWORD: changeme
-OMNIAUTH_PROVIDER_KEY: Your_OmniAuth_Provider_Key
-OMNIAUTH_PROVIDER_SECRET: Your_OmniAuth_Provider_Secret
 </pre>
 
 If you are planning to customize the application to send email using a Gmail account, you can add the user name and password needed for the application to send email. See the article "Send Email with Rails":http://railsapps.github.com/rails-send-email.html.
@@ -270,7 +270,7 @@ $ rake db:migrate
 $ rake db:seed
 </pre>
 
-Use @rake db:reset@ if you want to empty and reseed the database.
+Use @rake db:reseed@ if you want to empty and reseed the database. Or you can use @rake db:drop@ and @rake db:setup@. The equivalent task for Rails with ActiveRecord is @rake db:reset@ which will be available in Mongoid 4.0.
 
 Set the database for running tests:
 
