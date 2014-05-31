@@ -4,9 +4,9 @@ For a Rails 4.1 example application for Devise, see:
 
 * "rails-devise":https://github.com/RailsApps/rails-devise
 
-Tutorials are available for Devise:
+A tutorial is available for Devise:
 
-h4. "Tutorials":http://railsapps.github.io/rails-devise/
+h4. "Rails Devise Tutorial":http://railsapps.github.io/rails-devise/
 
 h4. Similar Examples and Tutorials
 
