@@ -6,7 +6,7 @@ For a Rails 4.1 example application for Devise, see:
 
 A tutorial is available for Devise:
 
-h4. "Rails Devise Tutorial":http://railsapps.github.io/rails-devise/
+"Rails Devise Tutorial":http://railsapps.github.io/rails-devise/
 
 h4. Similar Examples and Tutorials
 
@@ -25,7 +25,7 @@ Rails 3.2 example application shows how to use Devise with Mongoid.
 * "Devise":http://github.com/plataformatec/devise gives you ready-made authentication and user management.
 * MongoDB is used as a datastore with the "Mongoid":http://mongoid.org/  gem for quick development without schemas or migrations.
 
-You can build this application in only a few minutes using the "Rails Composer":http://railsapps.github.io/rails-composer/ tool.
+You really should use the "rails-devise":https://github.com/RailsApps/rails-devise newer version.
 
 h2. What Is Implemented -- and What Is Not
 
