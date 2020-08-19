@@ -108,7 +108,7 @@ GEM
       mongoid (>= 3.0.1)
       rake
       rspec (>= 2.14)
-    moped (1.5.1)
+    moped (1.5.3)
     multi_json (1.7.9)
     multi_test (0.0.2)
     nokogiri (1.6.0)
